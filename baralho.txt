@@ -1,0 +1,10 @@
+baralho = {4_:{4_zap:1, 4_copas:1, 4_espadas:1 , 4_pica:1}
+5_:{5_zap:2, 5_copas:2, 5_espadas:2 , 5_pica:2}
+6_:{6_zap:3, 6_copas:3, 6_espadas:3 , 6_pica:3}
+7_:{7_zap:4, 7_copas:4, 7_espadas:4 , 7_pica:4}
+Q_:{Q_zap:5, Q_copas:5, Q_espadas:5 , Q_pica:5}
+J_:{J_zap:6, J_copas:6, J_espadas:6 , J_pica:6}
+K_:{K_zap:7, K_copas:7, K_espadas:7 , K_pica:7}
+A_:{A_zap:8, A_copas:8, A_espadas:8 , A_pica:8}
+2_:{2_zap:9, 2_copas:9, 2_espadas:9 , 2_pica:9}
+3_:{3_zap:10, 3_copas:10, 3_espadas:10 , 3_pica:10}
