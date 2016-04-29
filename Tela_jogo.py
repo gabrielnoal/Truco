@@ -18,8 +18,8 @@ FPS=30
 
 tela_largura=800
 tela_altura=600
-altura_carta_mao = tela_altura/8
-largura_carta_mao = tela_altura/16
+altura_carta_mao = tela_altura/4
+largura_carta_mao = tela_altura/7
 posição_y_carta_mao=tela_altura-altura_carta_mao
 posição_x_carta_mao=tela_largura- (tela_largura/2)
 tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
