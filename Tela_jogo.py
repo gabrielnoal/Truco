@@ -14,42 +14,74 @@ preto=(0,0,0)
 vermelho=(255,0,0)
 verde=(0,150,0)
 
-FPS=30
+FPS=15
 
 tela_largura=800
 tela_altura=600
-altura_carta = tela_altura/4
-largura_carta = tela_altura/7
-posição_y_carta=(tela_altura/2)-100
-posição_x_carta=tela_largura/2
-mover_carta_y=0
-mover_carta_x=0
+
 
 tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
 pygame.display.set_caption('Truco')
 
-fim_do_jogo = False
 
-while not fim_do_jogo:
-    for event in pygame.event.get():
-        print (event)
-        if event.type == pygame.QUIT:
-            fim_do_jogo = True
-            
-            
-        if event.type == pygame.K_SPACE:
-                mover_carta_y+=100
-            
-    posição_y_carta+= mover_carta_y
-    posição_x_carta+= mover_carta_x
+def loop_de_jogo():
+    fim_do_app = False
+    fim_do_jogo= False
 
+    posição_x_baralho=(tela_largura/2)
+    posição_y_baralho=(tela_altura/2) -150
+
+    altura_carta = tela_altura/4    
+    largura_carta = tela_altura/7
+    
+    posição_x_carta1=(tela_largura/2)
+    posição_y_carta1=(tela_altura/2) - 150
+    posição_x_carta2=(tela_largura/2)
+    posição_y_carta2=(tela_altura/2) - 150
+    posição_x_carta3=(tela_largura/2)
+    posição_y_carta3=(tela_altura/2) - 150
+    
+    mover_carta_y=0
+    mover_carta_x=0
+    
+
+    while not fim_do_app:
+        while fim_do_jogo == True:
+            pass
+    
+        for event in pygame.event.get():
+            print (event)
+            
+            if event.type == pygame.QUIT:
+                    fim_do_app = True
+            if event.type == pygame.KEYDOWN:
+               
+                    
+                if event.key == pygame.K_SPACE:
+                        posição_y_carta1 = tela_altura- altura_carta
+                        posição_y_carta2 = posição_y_carta1
+                        posição_y_carta3 = posição_y_carta2
+                        
+                        posição_x_carta1 -= largura_carta 
+                        posição_x_carta2 = posição_x_carta1 + largura_carta + 20
+                        posição_x_carta3 = posição_x_carta2 + largura_carta + 20
+                        
+                        
+                
+#        posição_y_carta+= mover_carta_y
+#        posição_x_carta+= mover_carta_x
+    
+            
+        tela_truco.fill(verde)
+        tela_truco.fill(branco, rect=[posição_x_carta1,posição_y_carta1,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
+        tela_truco.fill(branco, rect=[posição_x_carta2,posição_y_carta2,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
+        tela_truco.fill(branco, rect=[posição_x_carta3,posição_y_carta3,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
         
-    tela_truco.fill(verde)
-    tela_truco.fill(branco, rect=[posição_x_carta,posição_y_carta,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
-    
-    pygame.display.update()
+        tela_truco.fill(branco, rect=[posição_x_baralho,posição_y_baralho,largura_carta,altura_carta])
+        pygame.display.update()
     
 
-pygame.display.update()
-pygame.quit()
-quit()
+    pygame.display.update()
+    pygame.quit()
+    
+loop_de_jogo()
