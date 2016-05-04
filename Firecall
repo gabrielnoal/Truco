@@ -1,0 +1,22 @@
+import firecall
+
+def jogador_mudou(data):
+    jogador = int(data.decode())
+    print(jogador)
+    if jogador == 0:
+        my_firebase.put_sync(point="/jogador", data=1)
+    else:
+        my_firebase.put_sync(point="/jogador", data=0)
+
+my_firebase = firecall.Firebase("https://amber-heat-9880.firebaseio.com/")
+
+
+
+watch = my_firebase.onChange(point="/jogador", callback=jogador_mudou)
+
+while True:
+    x = input("Digite q para terminar: ")
+    if x == "q":
+        break
+    
+watch.stop()        
