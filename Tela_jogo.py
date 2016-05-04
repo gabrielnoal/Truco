@@ -23,23 +23,27 @@ tela_altura=600
 tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
 pygame.display.set_caption('Truco')
 
+costas_da_carta = pygame.image.load("back_card.png")
+
+def carta_virada():
+    tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho])
 
 def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
 
-    posição_x_baralho=(tela_largura/2)
-    posição_y_baralho=(tela_altura/2) -150
+    posição_x_baralho=(tela_largura/2) 
+    posição_y_baralho=(tela_altura/2) -100
 
-    altura_carta = tela_altura/4    
-    largura_carta = tela_altura/7
+    altura_carta = tela_altura/6 
+    largura_carta = tela_altura/9
     
     posição_x_carta1=(tela_largura/2)
-    posição_y_carta1=(tela_altura/2) - 150
+    posição_y_carta1=(tela_altura/2)-100
     posição_x_carta2=(tela_largura/2)
-    posição_y_carta2=(tela_altura/2) - 150
+    posição_y_carta2=(tela_altura/2)-100
     posição_x_carta3=(tela_largura/2)
-    posição_y_carta3=(tela_altura/2) - 150
+    posição_y_carta3=(tela_altura/2)-100
     
     mover_carta_y=0
     mover_carta_x=0
@@ -55,7 +59,7 @@ def loop_de_jogo():
             if event.type == pygame.QUIT:
                     fim_do_app = True
             if event.type == pygame.KEYDOWN:
-               
+                
                     
                 if event.key == pygame.K_SPACE:
                         posição_y_carta1 = tela_altura- altura_carta
@@ -73,6 +77,7 @@ def loop_de_jogo():
     
             
         tela_truco.fill(verde)
+        tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho, largura_carta,altura_carta])
         tela_truco.fill(branco, rect=[posição_x_carta1,posição_y_carta1,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
         tela_truco.fill(branco, rect=[posição_x_carta2,posição_y_carta2,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
         tela_truco.fill(branco, rect=[posição_x_carta3,posição_y_carta3,largura_carta,altura_carta]) #Fill é mais usado por ser mais rapido
