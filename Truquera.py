@@ -49,8 +49,30 @@ def manilha():
     dic_baralho[espadilha]=12
     dic_baralho[copa]=13
     dic_baralho[zap]=14
-    return vira_carta, pika, espadilha, copa, zap
+    return vira
     
     
+        
+
+
+def distribuir_cartas():
+    cartas_dadasA=[]
+    cartas_dadasB=[]
+    baralho = ['Quatro_ouros','Quatro_espadas','Quatro_copas','Quatro_paus','Cinco_ouros','Cinco_espadas','Cinco_copas','Cinco_paus','Seis_ouros','Seis_espadas','Seis_copas','Seis_paus','Sete_ouros','Sete_espadas','Sete_copas','Sete_paus','Dama_ouros','Dama_espadas','Dama_copas','Dama_paus','Valete_ouros','Valete_espadas','Valete_copas','Valete_paus','Rei_ouros','Rei_espadas','Rei_copas','Rei_paus','As_ouros','As_espadas','As_copas','As_paus','Dois_ouros','Dois_espadas','Dois_copas','Dois_paus','Tres_ouros','Tres_espadas','Tres_copas','Tres_paus']
+    vira = manilha()
+    del baralho[vira]
+    for i in range(3):
+        entregaA = random.randint(0,len(baralho)-1)
+        cartas_dadasA.append(baralho[entregaA])
+        del baralho[entregaA]
+    for t in range(3):
+        entregaB = random.randint(0,len(baralho)-1)
+        cartas_dadasB.append(baralho[entregaB])
+        del baralho[entregaB]
+    return cartas_dadasA, cartas_dadasB
     
-print(manilha())    
+print(distribuir_cartas())
+        
+   
+        
+        
