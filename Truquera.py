@@ -19,20 +19,20 @@ class Algoritmo:
         self.vira = random.randint(0,39)
         self.cartas_dadasA=[]
         self.cartas_dadasB=[]
-        self.self.cartas_jogadasA = []
+        self.cartas_jogadasA = []
         self.cartas_jogadasB = []
         
         
    
         
-    def manilha(self,baralho,vira):
+    def manilha(self):
         dic_baralho = {'Quatro_ouros':1,'Quatro_espadas':1,'Quatro_copas':1,'Quatro_paus':1,'Cinco_ouros':2,'Cinco_espadas':2,'Cinco_copas':2,'Cinco_paus':2,'Seis_ouros':3,'Seis_espadas':3,'Seis_copas':3,'Seis_paus':3,'Sete_ouros':4,'Sete_espadas':4,'Sete_copas':4,'Sete_paus':4,'Dama_ouros':5,'Dama_espadas':5,'Dama_copas':5,'Dama_paus':5,'Valete_ouros':6,'Valete_espadas':6,'Valete_copas':6,'Valete_paus':6,'Rei_ouros':7,'Rei_espadas':7,'Rei_copas':7,'Rei_paus':7,'As_ouros':8,'As_espadas':8,'As_copas':8,'As_paus':8,'Dois_ouros':9,'Dois_espadas':9,'Dois_copas':9,'Dois_paus':9,'Tres_ouros':10,'Tres_espadas':10,'Tres_copas':10,'Tres_paus':10}
         #definindo as manilhas
         vira_carta=self.baralho[self.vira]
         a = vira_carta.split('_')
         b = a[1]
         #SE a vira for 3 fiz esse código para não dar erro
-        if vira in (36,37,38,39):
+        if self.vira in (36,37,38,39):
             pika = self.baralho[0]
             espadilha = self.baralho[1]
             copa = self.baralho[2]
@@ -42,7 +42,7 @@ class Algoritmo:
                 pika = self.baralho[self.vira+4]
                 espadilha = self.baralho[self.vira+5]
                 copa = self.baralho[self.vira+6]
-                zap = self.baralho[vira+7]
+                zap = self.baralho[self.vira+7]
                 
             if b == 'espadas':
                 pika = self.baralho[self.vira+3]
@@ -66,10 +66,6 @@ class Algoritmo:
     
 #Mudando os valores do dicionário        
     
-        print(pika)
-        print(espadilha)
-        print(copa)
-        print(zap)
         dic_baralho[pika]=11
         dic_baralho[espadilha]=12
         dic_baralho[copa]=13
@@ -97,7 +93,7 @@ class Algoritmo:
         
 
 
-    def define_jogador(self,jogador):
+    def define_jogador(self):
         if self.jogador == 1:
             self.jogador = 0
         else:
@@ -108,7 +104,7 @@ class Algoritmo:
 
 
 
-    def joga(self,jogador,cartas_dadasA,cartas_dadasB,cartas_jogadasA,cartas_jogadasB):
+    def joga(self):
         if self.jogador==0:
             for i in range(3):
                 joga = int(input('Qual carta deseja jogar:'))
@@ -140,6 +136,7 @@ class Algoritmo:
                   elif joga == 3:
                       self.cartas_jogadasB.append(self.cartas_dadasB[2])
                       del self.cartas_dadasB[2]
+                      
                       
 
 
