@@ -107,8 +107,80 @@ class Truco:
             print(self.mão_jogador1)
             return self.mão_jogador0,self.mão_jogador1
             
+        def troca_jogador(self):
+            if self.jogador == 0:
+                self.jogador =1
+            else:
+                self.jogador =0
+            return self.jogador
+
+        def joga_carta(self):                
+            while self.jogador ==0:
+                self.pergunta= input('Jogador 1: Qual carta quer jogar?')
+                if self.pegunta==1:
+                    if self.mão_jogador0[0]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador0[0])
+                        self.mão_jogador0[0]=-1
+                        troca_jogador()
+                        return self.mesa
+                elif self.pergunta==2:
+                    if self.mão_jogador0[1]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador0[1])
+                        self.mão_jogador0[1]=-1
+                        troca_jogador()
+                        return self.mesa
+                elif self.pergunta==3:
+                    if self.mão_jogador0[2]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador0[2])
+                        self.mão_jogador0[2]=-1
+                        troca_jogador()
+                        return self.mesa
             
+            while self.jogador ==1:
+                self.pergunta= input('Jogador 2: Qual carta quer jogar?')
+                if self.pegunta==1:
+                    if self.mão_jogador1[0]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador1[0])
+                        self.mão_jogador1[0]=-1
+                        troca_jogador()
+                        return self.mesa
+                elif self.pergunta==2:
+                    if self.mão_jogador1[1]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador1[1])
+                        self.mão_jogador1[1]=-1
+                        troca_jogador()
+                        return self.mesa
+                elif self.pergunta==3:
+                    if self.mão_jogador1[2]==-1:
+                        print("Essa carta ja foi jogada, tentei jogar outra carta")
+                    else:
+                        self.mesa.append(self.mão_jogador1[2])
+                        self.mão_jogador1[2]=-1
+                        troca_jogador()
+                        return self.mesa
+                
+        def limpa_jogadas(self):
+            while len(self.mesa)<2:
+                print(self.mesa)
+                continue
+            print(self.mesa)
+            del self.mesa[0]
+            del self.mesa[1]
+            return self.mesa
             
+        def verifica_ganhador(self):
+            
+                
                 
 truco=Truco()
 print(truco.manilha())
