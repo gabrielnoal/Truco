@@ -82,6 +82,7 @@ class Logica:
                 self.espadilha = self.baralho[self.vira+2]
                 self.copa = self.baralho[self.vira+3]
                 self.zap = self.baralho[self.vira+4]
+    
             print("A vira é o: {0}".format(self.baralho[self.vira]))
             del self.baralho[self.vira]
             self.dic_baralho[self.pika]=11
@@ -267,44 +268,82 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.ponto_rodada_jogador_1+=1                
                     self.rodada+=1
-        self.limpa_jogadas()
+                    
+        if self.ponto_rodada_jogador_0>self.ponto_rodada_jogador_1:
+            self.ponto_jogo_jogador_0+=self.truco
+
+        elif self.ponto_rodada_jogador_1>self.ponto_rodada_jogador_0:
+            self.ponto_jogo_jogador_1 += self.truco
         
         return
         
     def placar(self):
-        if self.ponto_rodada_jogador_0>self.ponto_rodada_jogador_1:
-            self.ponto_jogo_jogador_0+=self.truco
-        elif self.ponto_rodada_jogador_1>self.ponto_rodada_jogador_0:
-            self.ponto_jogo_jogador_1 += self.truco
-        return
+        return ("Jogador 1: {0} e Jogador 2: {1}".format(self.ponto_jogo_jogador_0,self.ponto_jogo_jogador_1))
+
+    def verifica_ganhador_partida(self):
+        if self.ponto_jogo_jogador_0<=12:
+            return ("Jogador 1 ganhou de {0} a {1}".format(self.ponto_jogo_jogador_0,self.ponto_jogo_jogador_1))
+        elif self.ponto_jogo_jogador_1<=12:
+            return ("Jogador 2 ganhou de {0} a {1}".format(self.ponto_jogo_jogador_1,self.ponto_jogo_jogador_0))
+        else:
+            return -1
+    
+    def gameloop(self):
+        self.manilha()
+        self.distribuir_cartas()
+        print(self.mão_jogador_0,self.mão_jogador_1)
+        self.joga_carta()
+        self.joga_carta()        
+        self.verifica_ganhador()
+        self.limpa_jogadas()
         
+        
+        print(self.mão_jogador_0,self.mão_jogador_1)
+        self.joga_carta()
+        self.joga_carta()        
+        self.verifica_ganhador()
+        self.limpa_jogadas()
+        
+
+        print(self.mão_jogador_0,self.mão_jogador_1)
+        self.joga_carta()
+        self.joga_carta()        
+        self.verifica_ganhador()
+        self.limpa_jogadas()
+        
+        
+        return self.placar()
+
+
+
+
 jogo=Logica()
-print(jogo.manilha())
+jogo.gameloop()
 
 
-print(jogo.distribuir_cartas())
-
-
-print(jogo.joga_carta())
-print(jogo.joga_carta())
-print(jogo.verifica_ganhador())
-print(jogo.ponto_rodada_jogador_0)
-print(jogo.ponto_rodada_jogador_1)
-
-print(jogo.mão_jogador_0,jogo.mão_jogador_1)
-print(jogo.joga_carta())
-print(jogo.joga_carta())
-print(jogo.verifica_ganhador())
-print(jogo.ponto_rodada_jogador_0)
-print(jogo.ponto_rodada_jogador_1)
-
-
-print(jogo.mão_jogador_0,jogo.mão_jogador_1)
-print(jogo.joga_carta())
-print(jogo.joga_carta())
-print(jogo.verifica_ganhador())
-print(jogo.ponto_rodada_jogador_0)
-print(jogo.ponto_rodada_jogador_1)
-
-
-print(jogo.placar())
+#print(jogo.distribuir_cartas())
+#
+#
+#print(jogo.joga_carta())
+#print(jogo.joga_carta())
+#print(jogo.verifica_ganhador())
+#print(jogo.ponto_rodada_jogador_0)
+#print(jogo.ponto_rodada_jogador_1)
+#
+#print(jogo.mão_jogador_0,jogo.mão_jogador_1)
+#print(jogo.joga_carta())
+#print(jogo.joga_carta())
+#print(jogo.verifica_ganhador())
+#print(jogo.ponto_rodada_jogador_0)
+#print(jogo.ponto_rodada_jogador_1)
+#
+#
+#print(jogo.mão_jogador_0,jogo.mão_jogador_1)
+#print(jogo.joga_carta())
+#print(jogo.joga_carta())
+#print(jogo.verifica_ganhador())
+#print(jogo.ponto_rodada_jogador_0)
+#print(jogo.ponto_rodada_jogador_1)
+#
+#
+#print(jogo.placar())
