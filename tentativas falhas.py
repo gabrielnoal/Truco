@@ -130,7 +130,7 @@ class Logica:
             
     def joga_carta(self):                
         while self.jogador ==0:
-            self.pergunta= int(input('Jogador 1: Qual carta quer jogar?'))
+            self.pergunta= int(input('Jogador 1: Qual carta quer jogar? '))
             if self.pergunta==1:
                 if self.mão_jogador_0[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
@@ -157,7 +157,7 @@ class Logica:
                     return self.mesa
         
         while self.jogador ==1:
-            self.pergunta= int(input('Jogador 2: Qual carta quer jogar?'))
+            self.pergunta= int(input('Jogador 2: Qual carta quer jogar? '))
             if self.pergunta==1:
                 if self.mão_jogador_1[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
@@ -288,33 +288,94 @@ class Logica:
         else:
             return -1
     
+
+        
+    def pedir_truco(self):
+        if self.pergunta=="truco" or self.pergunta=="Truco":
+            print('O outro jogador pediu Truco.')
+            self.resposta= input ('Quer cair no Truco? sim/não/6')
+            if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                self.truco=3
+
+            elif self.resposta== 6:
+                print('O outro jogador pediu 6.')
+                self.resposta= input ('Quer cair no 6? sim/não/9')
+                if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                    self.truco=6
+                    if self.resposta== 9:
+                        print('O outro jogador pediu 9.')
+                        self.resposta= input ('Quer cair no 9? sim/não/9')
+                        if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                            self.truco=9
+                            if self.resposta==12:
+                                print('O outro jogador pediu 9.')
+                                self.resposta= input ('Quer cair no 9? sim/não/9')
+                                if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                                    self.truco==12
+                                elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                                    self.troca_jogador()
+                                    if self.jogador==0:
+                                        self.ponto_jogo_jogador_0+=9
+                                    else:
+                                        self.ponto_jogo_jogador_1+=9
+                        elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                            self.troca_jogador()
+                            if self.jogador==0:
+                                self.ponto_jogo_jogador_0+=6
+                            else:
+                                self.ponto_jogo_jogador_1+=6
+                elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                    self.troca_jogador()
+                    if self.jogador==0:
+                        self.ponto_jogo_jogador_0+=3
+                    else:
+                        self.ponto_jogo_jogador_1+=3
+            
+            
+            
+            elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                self.troca_jogador()
+                if self.jogador==0:
+                    self.ponto_jogo_jogador_0+=1
+                else:
+                    self.ponto_jogo_jogador_1+=1
+            else:
+                return
+            return self.resposta
+                    
+
     def gameloop(self):
         self.manilha()
         self.distribuir_cartas()
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
-        self.joga_carta()        
+        self.pedir_truco()
+        self.joga_carta()      
+        self.pedir_truco()
         self.verifica_ganhador()
         self.limpa_jogadas()
+        self.verifica_ganhador_partida()
         
         
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
+        self.pedir_truco()
         self.joga_carta()        
+        self.pedir_truco()
         self.verifica_ganhador()
         self.limpa_jogadas()
-        
+        self.verifica_ganhador_partida()
 
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
+        self.pedir_truco()
         self.joga_carta()        
+        self.pedir_truco()
         self.verifica_ganhador()
         self.limpa_jogadas()
-        
+        self.verifica_ganhador_partida()
         
         return self.placar()
-
-
 
 
 jogo=Logica()
