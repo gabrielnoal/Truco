@@ -51,13 +51,14 @@ class Logica:
             self.copa = self.baralho[2]
             self.zap = self.baralho[3]
             
+            print("A vira é o: {0}".format(self.baralho[self.vira]))
             del self.baralho[self.vira]
             self.dic_baralho[self.pika]=11
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
-            
             return
+
         else:
             if self.b == 'ouros':
                 self.pika = self.baralho[self.vira+4]
@@ -89,7 +90,7 @@ class Logica:
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
-            print(self.baralho)            
+
             return
             
     def distribuir_cartas(self):
@@ -130,9 +131,9 @@ class Logica:
             
     def joga_carta(self):                
         while self.jogador ==0:
-            self.pergunta= int(input('Jogador 1: Qual carta quer jogar? '))
-#            self.pedir_truco()
-            if self.pergunta==1:
+            self.pergunta= input('Jogador 1: Qual carta quer jogar? ')
+            self.pedir_truco()
+            if self.pergunta=='1':
                 if self.mão_jogador_0[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -141,7 +142,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==2:
+            elif self.pergunta=='2':
                 if self.mão_jogador_0[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -150,7 +151,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==3:
+            elif self.pergunta=='3':
                 if self.mão_jogador_0[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -160,10 +161,10 @@ class Logica:
                     print(self.mesa)
                     return
         
-        while self.jogador ==1:
-            self.pergunta= int(input('Jogador 2: Qual carta quer jogar? '))
-#            self.pedir_truco()
-            if self.pergunta==1:
+        while self.jogador =='1':
+            self.pergunta= input('Jogador 2: Qual carta quer jogar? ')
+            self.pedir_truco()
+            if self.pergunta=='1':
                 if self.mão_jogador_1[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -172,7 +173,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==2:
+            elif self.pergunta=='2':
                 if self.mão_jogador_1[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -181,7 +182,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==3:
+            elif self.pergunta=='3':
                 if self.mão_jogador_1[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
