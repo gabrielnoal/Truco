@@ -125,9 +125,10 @@ class Logica:
     def troca_jogador(self):
         if self.jogador == 0:
             self.jogador =1
+            return 
         else:
             self.jogador =0
-        return
+            return 
             
     def joga_carta(self):                
         while self.jogador ==0:
@@ -161,7 +162,7 @@ class Logica:
                     print(self.mesa)
                     return
         
-        while self.jogador =='1':
+        while self.jogador ==1:
             self.pergunta= input('Jogador 2: Qual carta quer jogar? ')
             self.pedir_truco()
             if self.pergunta=='1':
@@ -215,28 +216,23 @@ class Logica:
                 self.ponto_rodada_jogador_0+=1
                 self.ponto_rodada_jogador_1+=1                
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]:
-                    self.ponto_rodada_jogador_0+=1
-                    self.rodada+=1
+                    self.ponto_rodada_jogador_1+=1
                     return
                 elif self.dic_baralho[self.mesa[0]]<self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
-                    self.ponto_rodada_jogador_1+=1
-                    self.rodada+=1
+                    self.ponto_rodada_jogador_0+=1
                     return
                 else:
                     if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]:
                         self.ponto_rodada_jogador_0+=1
-                        self.rodada+=1
                         return
                     elif self.dic_baralho[self.mesa[0]]<self.dic_baralho[self.mesa[1]]:
                         self.troca_jogador()
                         self.ponto_rodada_jogador_1+=1
-                        self.rodada+=1
                         return
                     else:
                         if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]:
                             self.ponto_rodada_jogador_0+=1
-                            self.rodada+=1
                             return
                         elif self.dic_baralho[self.mesa[0]]<self.dic_baralho[self.mesa[1]]:
                             self.troca_jogador()
@@ -317,38 +313,38 @@ class Logica:
     def pedir_truco(self):
         if self.pergunta=="truco" or self.pergunta=="Truco":
             print('O outro jogador pediu Truco.')
-            self.resposta= input ('Quer cair no Truco? sim/não/6')
-            if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+            self.pergunta= input ('Quer cair no Truco? sim/não/6')
+            if self.pergunta == "sim" or self.pergunta == "Sim" or self.pergunta == 's' or self.pergunta == 'S':
                 self.truco=3
 
-            elif self.resposta== 6:
+            elif self.pergunta== "6":
                 print('O outro jogador pediu 6.')
-                self.resposta= input ('Quer cair no 6? sim/não/9')
-                if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                self.pergunta= input ('Quer cair no 6? sim/não/9')
+                if self.pergunta == "sim" or self.pergunta == "Sim" or self.pergunta == 's' or self.pergunta == 'S':
                     self.truco=6
-                    if self.resposta== 9:
+                    if self.pergunta== "9":
                         print('O outro jogador pediu 9.')
-                        self.resposta= input ('Quer cair no 9? sim/não/9')
-                        if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
-                            self.truco=9
-                            if self.resposta==12:
+                        self.pergunta= input ('Quer cair no 9? sim/não/9')
+                        if self.pergunta == "sim" or self.pergunta == "Sim" or self.pergunta == 's' or self.pergunta == 'S':
+                            self.truco="9"
+                            if self.pergunta==12:
                                 print('O outro jogador pediu 9.')
-                                self.resposta= input ('Quer cair no 9? sim/não/9')
-                                if self.resposta == "sim" or self.resposta == "Sim" or self.resposta == 's' or self.resposta == 'S':
+                                self.pergunta= input ('Quer cair no 9? sim/não/9')
+                                if self.pergunta == "sim" or self.pergunta == "Sim" or self.pergunta == 's' or self.pergunta == 'S':
                                     self.truco==12
-                                elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                                elif self.pergunta == "nao" or self.pergunta == 'não' or self.pergunta == "Nao" or self.pergunta == 'Não' or self.pergunta =='n' or self.pergunta =='N':
                                     self.troca_jogador()
                                     if self.jogador==0:
                                         self.ponto_jogo_jogador_0+=9
                                     else:
                                         self.ponto_jogo_jogador_1+=9
-                        elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                        elif self.pergunta == "nao" or self.pergunta == 'não' or self.pergunta == "Nao" or self.pergunta == 'Não' or self.pergunta =='n' or self.pergunta =='N':
                             self.troca_jogador()
                             if self.jogador==0:
                                 self.ponto_jogo_jogador_0+=6
                             else:
                                 self.ponto_jogo_jogador_1+=6
-                elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+                elif self.pergunta == "nao" or self.pergunta == 'não' or self.pergunta == "Nao" or self.pergunta == 'Não' or self.pergunta =='n' or self.pergunta =='N':
                     self.troca_jogador()
                     if self.jogador==0:
                         self.ponto_jogo_jogador_0+=3
@@ -357,24 +353,27 @@ class Logica:
             
             
             
-            elif self.resposta == "nao" or self.resposta == 'não' or self.resposta == "Nao" or self.resposta == 'Não' or self.resposta =='n' or self.resposta =='N':
+#            elif self.pergunta == "nao" or self.pergunta == 'não' or self.pergunta == "Nao" or self.pergunta == 'Não' or self.pergunta =='n' or self.pergunta =='N':
+            else:            
                 self.troca_jogador()
                 if self.jogador==0:
+                    self.ponto_rodada_jogador_0=3
                     self.ponto_jogo_jogador_0+=1
+                    return
                 else:
+                    self.ponto_rodada_jogador_1=3
                     self.ponto_jogo_jogador_1+=1
-            else:
-                return
-            return self.resposta
+                    return
+            
+            return self.pergunta
                     
 
-    def gameloop(self):
+    def gameloop(self):        
         self.manilha()
         self.distribuir_cartas()
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
-        self.joga_carta()      
-        
+        self.joga_carta()
         self.verifica_ganhador()
         self.limpa_jogadas()
         self.verifica_ganhador_partida()
@@ -382,16 +381,14 @@ class Logica:
         
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
-        self.joga_carta()        
-        
+        self.joga_carta()
         self.verifica_ganhador()
         self.limpa_jogadas()
         self.verifica_ganhador_partida()
 
         print(self.mão_jogador_0,self.mão_jogador_1)
         self.joga_carta()
-        self.joga_carta()        
-        self.pedir_truco()
+        self.joga_carta()
         self.verifica_ganhador()
         self.limpa_jogadas()
         self.verifica_ganhador_partida()
