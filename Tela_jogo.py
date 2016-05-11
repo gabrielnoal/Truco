@@ -32,16 +32,18 @@ def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
     costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
-    costas_da_carta = pygame.image.load("back_card.png")
+    01_of_clubs = pygame.image.load("01_of_clubs.png")
+    01_of_diamonds = pygame.image.load("01_of_diamonds.png")
+    01_of_hearts = pygame.image.load("01_of_hearts.png")
+    01_of_spades = pygame.image.load("01_of_spades.png")
+    
+    02_of_clubs = pygame.image.load("02_of_clubs.png")
+    02_of_diamonds = pygame.image.load("02_of_diamonds.png")
+    02_of_hearts = pygame.image.load("02_of_hearts.png")
+    02_of_spades = pygame.image.load("02_of_spades.png")
+    
+    03_of_clubs  = pygame.image.load("03_of_clubs .png")
+    03_of_diamonds = pygame.image.load("03_of_diamonds.png")
     costas_da_carta = pygame.image.load("back_card.png")
     costas_da_carta = pygame.image.load("back_card.png")
     costas_da_carta = pygame.image.load("back_card.png")
