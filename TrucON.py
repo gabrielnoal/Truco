@@ -45,11 +45,14 @@ class Logica:
             self.copa = self.baralho[2]
             self.zap = self.baralho[3]
             
+            print("A vira é o: {0}".format(self.baralho[self.vira]))
             del self.baralho[self.vira]
             self.dic_baralho[self.pika]=11
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
+            print(self.baralho)            
+            return
             
             return
         else:
@@ -124,9 +127,9 @@ class Logica:
             
     def joga_carta(self):                
         while self.jogador ==0:
-            self.pergunta= int(input('Jogador 1: Qual carta quer jogar? '))
-#            self.pedir_truco()
-            if self.pergunta==1:
+            self.pergunta= input('Jogador 1: Qual carta quer jogar? ')
+            self.pedir_truco()
+            if self.pergunta=='1':
                 if self.mão_jogador_0[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -135,7 +138,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==2:
+            elif self.pergunta=='2':
                 if self.mão_jogador_0[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -144,7 +147,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==3:
+            elif self.pergunta=='3':
                 if self.mão_jogador_0[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -155,9 +158,9 @@ class Logica:
                     return
         
         while self.jogador ==1:
-            self.pergunta= int(input('Jogador 2: Qual carta quer jogar? '))
-#            self.pedir_truco()
-            if self.pergunta==1:
+            self.pergunta= input('Jogador 2: Qual carta quer jogar? ')
+            self.pedir_truco()
+            if self.pergunta=='1':
                 if self.mão_jogador_1[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -166,7 +169,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==2:
+            elif self.pergunta=='2':
                 if self.mão_jogador_1[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -175,7 +178,7 @@ class Logica:
                     self.troca_jogador()
                     print(self.mesa)
                     return
-            elif self.pergunta==3:
+            elif self.pergunta=='3':
                 if self.mão_jogador_1[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
@@ -186,10 +189,7 @@ class Logica:
                     return
         
     def limpa_jogadas(self):
-        while not len(self.mesa)==2:
-            continue
-        self.mesa=[]        
-        print(self.mesa)
+        self.mesa=[]
         return
         
     def verifica_ganhador(self):
@@ -315,7 +315,7 @@ class Logica:
                 if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                     self.truco = 3
                 elif self.resposta == 'Seis' or 'seis' or '6':
-                    pedir_seis()
+                    self.pedir_seis()
                 else:
                     self.ponto_jogo_jogador_0 += 1
 
@@ -326,7 +326,7 @@ class Logica:
                 if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                     self.truco = 3
                 elif self.resposta == 'Seis' or 'seis' or '6':
-                    pedir_seis()
+                    self.pedir_seis()
                 else:
                     self.ponto_jogo_jogador_1 += 1
         else:
@@ -341,7 +341,7 @@ class Logica:
             if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                 self.truco = 6
             elif self.resposta == 'Nove' or 'nove' or '9':
-                pedir_nove()
+                self.pedir_nove()
             else:
                 self.ponto_jogo_jogador_0 += 3
 
@@ -351,7 +351,7 @@ class Logica:
             if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                 self.truco = 6
             elif self.resposta == 'Nove' or 'nove' or '9':
-                pedir_nove()
+                self.pedir_nove()
             else:
                 self.ponto_jogo_jogador_1 += 3
             
@@ -365,7 +365,7 @@ class Logica:
             if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                 self.truco = 9
             elif self.resposta == 'doze' or 'Doze' or '12':
-                pedir_doze()
+                self.pedir_doze()
             else:
                 self.ponto_jogo_jogador_0 += 6
         
@@ -375,7 +375,7 @@ class Logica:
             if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                 self.truco = 9
             elif self.resposta == 'doze' or 'Doze' or '12':
-                pedir_doze()
+                self.pedir_doze()
             else:
                 self.ponto_jogo_jogador_1 += 6
         
