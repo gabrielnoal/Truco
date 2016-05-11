@@ -32,6 +32,24 @@ def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
     costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
+    costas_da_carta = pygame.image.load("back_card.png")
     
     posição_x_baralho=(tela_largura/2) 
     posição_y_baralho=(tela_altura/2) -50
