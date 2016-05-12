@@ -51,7 +51,7 @@ class Logica:
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
-            print(self.baralho)            
+#            print(self.baralho)            
             return
             
             return
@@ -86,7 +86,7 @@ class Logica:
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
-            print(self.baralho)            
+#            print(self.baralho)            
             return
             
     def distribuir_cartas(self):
