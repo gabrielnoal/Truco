@@ -7,6 +7,7 @@ Created on Fri Apr 29 14:52:08 2016
 
 import pygame
 import time
+from TrucON import Logica
 
 pygame.init()
 branco=(255,255,255)
@@ -75,7 +76,7 @@ def loop_de_jogo():
     
     Dama_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_clubs_en.png")
     Dama_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_diamonds_en.png")
-    Dama_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_c_en.png")
+    Dama_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_hearts_en.png")
     Dama_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_spades_en.png")
     
     Rei_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_clubs_en.png")
