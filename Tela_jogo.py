@@ -30,6 +30,7 @@ pygame.display.set_caption('Truco')
 
 
 def loop_de_jogo():
+    jogo=Logica()
     fim_do_app = False
     fim_do_jogo= False
     costas_da_carta = pygame.image.load("back_card.png")
@@ -84,7 +85,16 @@ def loop_de_jogo():
     Rei_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_diamonds_en.png")
     Rei_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_spades_en.png")
     
-
+    imagens_baralho=[Quatro_ouros,Quatro_espadas,Quatro_copas,Quatro_paus,
+                   Cinco_ouros,Cinco_espadas,Cinco_copas,Cinco_paus,
+                   Seis_ouros,Seis_espadas,Seis_copas,Seis_paus,
+                   Sete_ouros,Sete_espadas,Sete_copas,Sete_paus,
+                   Dama_ouros,Dama_espadas,Dama_copas,Dama_paus,
+                   Valete_ouros,Valete_espadas,Valete_copas,Valete_paus,
+                   Rei_ouros,Rei_espadas,Rei_copas,Rei_paus,
+                   As_ouros,As_espadas,As_copas,As_paus,
+                   Dois_ouros,Dois_espadas,Dois_copas,Dois_paus,
+                   Tres_ouros,Tres_espadas,Tres_copas,Tres_paus]
 
     
     posição_x_baralho=(tela_largura/2) 
@@ -191,14 +201,16 @@ def loop_de_jogo():
  
         tela_truco.fill(verde)
 
+        tela_truco.blit((imagens_baralho[jogo.manilha()]), [posição_x_carta1_1,posição_y_carta1_1])
         
-        tela_truco.blit(costas_da_carta, [posição_x_carta1_1,posição_y_carta1_1])
-        tela_truco.blit(costas_da_carta, [posição_x_carta1_2,posição_y_carta1_2])
-        tela_truco.blit(costas_da_carta, [posição_x_carta1_3,posição_y_carta1_3])
+#        tela_truco.blit(jogo.mão_jogador_0[0], [posição_x_carta1_1,posição_y_carta1_1])
+#        tela_truco.blit(jogo.mão_jogador_0[1], [posição_x_carta1_2,posição_y_carta1_2])
+#        tela_truco.blit(jogo.mão_jogador_0[2], [posição_x_carta1_3,posição_y_carta1_3])
+#        
+#        tela_truco.blit(jogo.mão_jogador_1[0], [posição_x_carta3_1,posição_y_carta3_1])
+#        tela_truco.blit(jogo.mão_jogador_1[1], [posição_x_carta3_2,posição_y_carta3_2])
+#        tela_truco.blit(jogo.mão_jogador_1[2], [posição_x_carta3_3,posição_y_carta3_3])
         
-        tela_truco.blit(costas_da_carta, [posição_x_carta3_1,posição_y_carta3_1])
-        tela_truco.blit(costas_da_carta, [posição_x_carta3_2,posição_y_carta3_2])
-        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
         tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho])
 
 #        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
