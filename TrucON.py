@@ -24,8 +24,8 @@ class Logica:
                             'Tres_ouros':10,'Tres_espadas':10,'Tres_copas':10,'Tres_paus':10}
         self.jogador=0
         self.rodada=1
-        self.mão_jogador_0=[]
-        self.mão_jogador_1=[]
+        self.mao_jogador_0=[]
+        self.mao_jogador_1=[]
         self.mesa=[]
         self.ponto_rodada_jogador_0=0
         self.ponto_rodada_jogador_1=0   
@@ -88,36 +88,36 @@ class Logica:
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
 #            print(self.baralho)            
-            return
+            return self.vira
             
     def distribuir_cartas(self):
         self.carta_1=random.randint(0,39-1)
-        self.mão_jogador_0.append(self.baralho[self.carta_1])
+        self.mao_jogador_0.append(self.baralho[self.carta_1])
         del self.baralho[self.carta_1]
             
         self.carta_2=random.randint(0,39-2)
-        self.mão_jogador_0.append(self.baralho[self.carta_2])
+        self.mao_jogador_0.append(self.baralho[self.carta_2])
         del self.baralho[self.carta_2]
             
         self.carta_3=random.randint(0,39-3)
-        self.mão_jogador_0.append(self.baralho[self.carta_3])
+        self.mao_jogador_0.append(self.baralho[self.carta_3])
         del self.baralho[self.carta_3]
             
         self.carta_4=random.randint(0,39-4)
-        self.mão_jogador_1.append(self.baralho[self.carta_4])
+        self.mao_jogador_1.append(self.baralho[self.carta_4])
         del self.baralho[self.carta_4]
             
         self.carta_5=random.randint(0,39-5)
-        self.mão_jogador_1.append(self.baralho[self.carta_5])
+        self.mao_jogador_1.append(self.baralho[self.carta_5])
         del self.baralho[self.carta_5]
             
         self.carta_6=random.randint(0,39-6)
-        self.mão_jogador_1.append(self.baralho[self.carta_6])
+        self.mao_jogador_1.append(self.baralho[self.carta_6])
         del self.baralho[self.carta_6]
         
 #        print (self.baralho)
 
-        return self.mão_jogador_0,self.mão_jogador_1
+        return self.mao_jogador_0,self.mao_jogador_1
             
     def troca_jogador(self):
         if self.jogador == 0:
@@ -131,29 +131,29 @@ class Logica:
             self.pergunta= input('Jogador 1: Qual carta quer jogar? ')
             self.pedir_truco()
             if self.pergunta=='1':
-                if self.mão_jogador_0[0]==-1:
+                if self.mao_jogador_0[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_0[0])
-                    self.mão_jogador_0[0]=-1
+                    self.mesa.append(self.mao_jogador_0[0])
+                    self.mao_jogador_0[0]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
             elif self.pergunta=='2':
-                if self.mão_jogador_0[1]==-1:
+                if self.mao_jogador_0[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_0[1])
-                    self.mão_jogador_0[1]=-1
+                    self.mesa.append(self.mao_jogador_0[1])
+                    self.mao_jogador_0[1]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
             elif self.pergunta=='3':
-                if self.mão_jogador_0[2]==-1:
+                if self.mao_jogador_0[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_0[2])
-                    self.mão_jogador_0[2]=-1
+                    self.mesa.append(self.mao_jogador_0[2])
+                    self.mao_jogador_0[2]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
@@ -162,29 +162,29 @@ class Logica:
             self.pergunta= input('Jogador 2: Qual carta quer jogar? ')
             self.pedir_truco()
             if self.pergunta=='1':
-                if self.mão_jogador_1[0]==-1:
+                if self.mao_jogador_1[0]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_1[0])
-                    self.mão_jogador_1[0]=-1
+                    self.mesa.append(self.mao_jogador_1[0])
+                    self.mao_jogador_1[0]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
             elif self.pergunta=='2':
-                if self.mão_jogador_1[1]==-1:
+                if self.mao_jogador_1[1]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_1[1])
-                    self.mão_jogador_1[1]=-1
+                    self.mesa.append(self.mao_jogador_1[1])
+                    self.mao_jogador_1[1]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
             elif self.pergunta=='3':
-                if self.mão_jogador_1[2]==-1:
+                if self.mao_jogador_1[2]==-1:
                     print("Essa carta ja foi jogada, tente jogar outra carta")
                 else:
-                    self.mesa.append(self.mão_jogador_1[2])
-                    self.mão_jogador_1[2]=-1
+                    self.mesa.append(self.mao_jogador_1[2])
+                    self.mao_jogador_1[2]=-1
                     self.troca_jogador()
                     print(self.mesa)
                     return
@@ -276,6 +276,12 @@ class Logica:
                     self.rodada+=1
                     return
                 else:
+                    if self.jogador == 1:
+                        self.ponto_jogo_jogador_0+=self.valor_partida
+                        print("Jogador 1 ganhou!")
+                    else:
+                        self.ponto_jogo_jogador_1+=self.valor_partida
+                        print("Jogador 2 ganhou!")
                     if self.jogador == 1:
                         self.ponto_jogo_jogador_0+=self.valor_partida
                         print("Fim da rodada, empatou")
@@ -418,7 +424,7 @@ class Logica:
                 if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
                     self.valor_partida = 3
                 elif self.resposta == 'Seis' or 'seis' or '6':
-                    self.pedir_seis()
+                    self.pedir_seis()                   
                 else:
                     self.ponto_jogo_jogador_0 += 1
                     self.acabar()
@@ -433,8 +439,6 @@ class Logica:
                     self.pedir_seis()
                 else:
                     self.ponto_jogo_jogador_1 += 1
-        else:
-            pass
 
 
 
@@ -502,15 +506,18 @@ class Logica:
                 self.ponto_jogo_jogador_1 += 9
 
     def fim (self):
-        if self.ponto_rodada_jogador_0 >=2 or self.ponto_rodada_jogador_1 >= 2:
-            self.limpa_jogadas()
-            self.mão_jogador_0=[]
-            self.mão_jogador_1=[]
+        while self.ponto_rodada_jogador_0 < 2 or self.ponto_rodada_jogador_1 < 2:
+             pass 
+
+        if self.ponto_rodada_jogador_0 >= 2 or self.ponto_rodada_jogador_1 >= 2:
+            self.placar()
+            self.mao_jogador_0=[]
+            self.mao_jogador_1=[]
             self.mesa=[]
             self.ponto_rodada_jogador_0=0
             self.ponto_rodada_jogador_1=0 
             self.valor_partida=1
-            self.truco = False
+           
 
         
 
@@ -522,7 +529,7 @@ class Logica:
         self.manilha()
         self.distribuir_cartas()
 
-        print(self.mão_jogador_0,self.mão_jogador_1)
+        print(self.mao_jogador_0,self.mao_jogador_1)
         self.joga_carta()
         self.joga_carta()          
         self.verifica_ganhador()
@@ -532,7 +539,7 @@ class Logica:
         print(self.ponto_rodada_jogador_1)
        
         
-        print(self.mão_jogador_0,self.mão_jogador_1)
+        print(self.mao_jogador_0,self.mao_jogador_1)
         self.joga_carta()
         self.joga_carta()        
         self.verifica_ganhador()
@@ -541,7 +548,7 @@ class Logica:
         print(self.ponto_rodada_jogador_0)
         print(self.ponto_rodada_jogador_1)
 
-        print(self.mão_jogador_0,self.mão_jogador_1)
+        print(self.mao_jogador_0,self.mao_jogador_1)
         self.joga_carta()
         self.joga_carta()        
         self.pedir_truco()
@@ -551,9 +558,7 @@ class Logica:
         print(self.ponto_rodada_jogador_0)
         print(self.ponto_rodada_jogador_1)
         self.fim()
-        self.placar()
         
-        return self.placar()
 
 
 jogo=Logica()
@@ -569,7 +574,7 @@ jogo.gameloop()
 #print(jogo.ponto_rodada_jogador_0)
 #print(jogo.ponto_rodada_jogador_1)
 #
-#print(jogo.mão_jogador_0,jogo.mão_jogador_1)
+#print(jogo.mao_jogador_0,jogo.mao_jogador_1)
 #print(jogo.joga_carta())
 #print(jogo.joga_carta())
 #print(jogo.verifica_ganhador())
@@ -577,7 +582,7 @@ jogo.gameloop()
 #print(jogo.ponto_rodada_jogador_1)
 #
 #
-#print(jogo.mão_jogador_0,jogo.mão_jogador_1)
+#print(jogo.mao_jogador_0,jogo.mao_jogador_1)
 #print(jogo.joga_carta())
 #print(jogo.joga_carta())
 #print(jogo.verifica_ganhador())
