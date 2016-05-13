@@ -8,6 +8,7 @@ Created on Fri Apr 29 14:52:08 2016
 import pygame
 import time
 from TrucON import Logica
+jogo=Logica()
 
 pygame.init()
 branco=(255,255,255)
@@ -24,13 +25,14 @@ tela_altura=600
 tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
 pygame.display.set_caption('Truco')
 
+jogo.manilha()
+
 
 #costas_da_carta = pygame.image.load("back_card.png")
 #costas_da_carta = pygame.transform.scale(costas_da_carta, (largura_carta,altura_carta))
 
 
 def loop_de_jogo():
-    jogo=Logica()
     fim_do_app = False
     fim_do_jogo= False
     costas_da_carta = pygame.image.load("back_card.png")
@@ -95,6 +97,10 @@ def loop_de_jogo():
                    As_ouros,As_espadas,As_copas,As_paus,
                    Dois_ouros,Dois_espadas,Dois_copas,Dois_paus,
                    Tres_ouros,Tres_espadas,Tres_copas,Tres_paus]
+                   
+                   
+                   
+    
 
     
     posição_x_baralho=(tela_largura/2) 
@@ -198,19 +204,27 @@ def loop_de_jogo():
 #        posição_x_carta+= mover_carta_x
     
         costas_da_carta = pygame.transform.scale(costas_da_carta, (int(largura_carta),int(altura_carta)))
- 
-        tela_truco.fill(verde)
-
-        tela_truco.blit((imagens_baralho[jogo.manilha()]), [posição_x_carta1_1,posição_y_carta1_1])
+       
+  
         
-#        tela_truco.blit(jogo.mão_jogador_0[0], [posição_x_carta1_1,posição_y_carta1_1])
+        manilha = imagens_baralho[jogo.vira]        
+        manilha = pygame.transform.scale(manilha,(int(largura_carta),int(altura_carta)))
+        
+        tela_truco.fill(verde)
+        
+            
+        tela_truco.blit(manilha, [posição_x_carta1_1,posição_y_carta1_1])        
+        del imagens_baralho[jogo.vira]
+        
+        
+#        tela_truco.blit(, [posição_x_carta1_1,posição_y_carta1_1])
 #        tela_truco.blit(jogo.mão_jogador_0[1], [posição_x_carta1_2,posição_y_carta1_2])
 #        tela_truco.blit(jogo.mão_jogador_0[2], [posição_x_carta1_3,posição_y_carta1_3])
-#        
+        
 #        tela_truco.blit(jogo.mão_jogador_1[0], [posição_x_carta3_1,posição_y_carta3_1])
 #        tela_truco.blit(jogo.mão_jogador_1[1], [posição_x_carta3_2,posição_y_carta3_2])
 #        tela_truco.blit(jogo.mão_jogador_1[2], [posição_x_carta3_3,posição_y_carta3_3])
-        
+#        
         tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho])
 
 #        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])

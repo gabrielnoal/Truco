@@ -562,7 +562,7 @@ class Logica:
 
 
 jogo=Logica()
-jogo.gameloop()
+#jogo.gameloop()
 
 
 #print(jogo.distribuir_cartas())
