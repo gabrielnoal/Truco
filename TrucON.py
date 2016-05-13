@@ -53,9 +53,9 @@ class Logica:
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
 #            print(self.baralho)            
-            return
+            return self.vira
             
-            return
+            
         else:
             if self.b == 'ouros':
                 self.pika = self.baralho[self.vira+4]
