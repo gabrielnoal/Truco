@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Fri May 13 15:12:27 2016
 
@@ -137,6 +137,7 @@ imagens_baralho=[Quatro_ouros,Quatro_espadas,Quatro_copas,Quatro_paus,
 
 jogo.manilha()
 jogo.distribuir_cartas()
+
 carta_1_1 = imagens_baralho[jogo.carta_1]
 del imagens_baralho[jogo.carta_1]
 #print(carta_1_1)
@@ -156,6 +157,7 @@ del imagens_baralho[jogo.carta_5]
 carta_3_3 = imagens_baralho[jogo.carta_6]
 del imagens_baralho[jogo.carta_6]
 #print(carta_3_3)
+
 manilha = imagens_baralho[jogo.vira]
 
 
