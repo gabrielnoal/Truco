@@ -1,4 +1,5 @@
     
+    
 import random
 class Logica:
     def __init__(self):
@@ -315,7 +316,7 @@ class Logica:
         if self.ponto_rodada_jogador_0 >= 2:
             print('Jogador 0 ganhou a rodada!')
             print()
-            self.ponto_jogo_jogador_0 +=1
+            self.ponto_jogo_jogador_0 += self.valor_partida
             print('Pontos na partida jogador 0:',self.ponto_jogo_jogador_0)
             print('Pontos na partida jogador 1:',self.ponto_jogo_jogador_1)
             self.mao_jogador_0=[]
@@ -330,7 +331,7 @@ class Logica:
         if self.ponto_rodada_jogador_1 >= 2:
             print('Jogador 1 ganhou a rodada!')
             print()
-            self.ponto_jogo_jogador_1 +=1
+            self.ponto_jogo_jogador_1 += self.valor_partida
             print('Pontos na partida jogador 1:',self.ponto_jogo_jogador_1)
             print('Pontos na partida jogador 0:',self.ponto_jogo_jogador_0)
             self.mao_jogador_0=[]
@@ -369,8 +370,7 @@ class Logica:
                 elif self.resposta == 'seis' :
                     self.pedir_seis()
                 else:
-                    self.ponto_jogo_jogador_0 += 1
-                    self.acabar()
+                    self.correr()
 
         if self.jogador == 1:
             if self.pergunta == 'truco':
@@ -381,7 +381,7 @@ class Logica:
                 elif self.resposta == 'seis' or '6':
                     self.pedir_seis()
                 else:
-                    self.ponto_jogo_jogador_1 += 1
+                    self.correr()
 
 
 
@@ -396,7 +396,7 @@ class Logica:
             elif self.resposta == 'nove':
                 self.pedir_nove()
             else:
-                self.ponto_jogo_jogador_0 += 3
+                self.correr()
 
         if self.jogador == 1:
             if self.resposta == 'seis' :
@@ -408,7 +408,7 @@ class Logica:
             elif self.resposta ==  'nove':
                 self.pedir_nove()
             else:
-                self.ponto_jogo_jogador_1 += 3
+                self.correr()
             
 
 
@@ -424,7 +424,7 @@ class Logica:
             elif self.resposta == 'doze' or '12':
                 self.pedir_doze()
             else:
-                self.ponto_jogo_jogador_0 += 6
+                self.correr()
         
         if self.jogador == 1:
             if self.pergunta == 'nove' :
@@ -436,7 +436,7 @@ class Logica:
             elif self.resposta == 'doze' or 'Doze' or '12':
                 self.pedir_doze()
             else:
-                self.ponto_jogo_jogador_1 += 6
+                self.correr()
         
 
     def pedir_doze(self):
@@ -448,7 +448,7 @@ class Logica:
             if self.resposta == 'cair' :
                 self.valor_partida = 12 # Atualizou o valor da partida
             else:
-                self.ponto_jogo_jogador_0 += 9
+                self.correr()
         
         if self.jogador == 1:
             if self.pergunta == "doze":
@@ -458,7 +458,17 @@ class Logica:
             if self.resposta == 'cair' :
                 self.valor_partida = 12 # Atualizou o valor da partida
             else:
-                self.ponto_jogo_jogador_1 += 9
+                self.correr()
+
+
+    def correr(self):
+        if self.jogador == 1:
+            self.ponto_jogo_jogador_1 += self.valor_partida
+        if self.jogador == 0:
+            self.ponto_jogo_jogador_0 += self.valor_partida
+        self.fim_rodada()
+
+
 
             
 
@@ -529,5 +539,4 @@ jogo.gameloop()
 #print(jogo.ponto_rodada_jogador_1)
 #
 #
-#print(jogo.placar())    
-    
+#print(jogo.placar())
