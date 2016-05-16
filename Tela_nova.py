@@ -124,7 +124,7 @@ Rei_copas = pygame.transform.scale(Rei_copas, (int(largura_carta),int(altura_car
 Rei_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_spades_en.png")
 Rei_espadas = pygame.transform.scale(Rei_espadas, (int(largura_carta),int(altura_carta)))
 
-imagens_baralho=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_paus,
+imagens_baralho_original=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_paus,
                    Cinco_ouros, Cinco_espadas, Cinco_copas, Cinco_paus,
                    Seis_ouros, Seis_espadas, Seis_copas, Seis_paus,
                    Sete_ouros, Sete_espadas, Sete_copas, Sete_paus,
@@ -134,6 +134,8 @@ imagens_baralho=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_paus,
                    As_ouros, As_espadas, As_copas, As_paus,
                    Dois_ouros, Dois_espadas, Dois_copas, Dois_paus,
                    Tres_ouros, Tres_espadas, Tres_copas, Tres_paus]
+                   
+imagens_baralho = imagens_baralho_original[:]
                    
 
 jogo.manilha()
