@@ -118,14 +118,6 @@ def loop_de_jogo():
     posição_x_carta1_3=(tela_largura/2)
     posição_y_carta1_3=(tela_altura/2)-50
     
-#    posição_x_carta2_1=(tela_largura/2)
-#    posição_y_carta2_1=(tela_altura/2)-50
-#    
-#    posição_x_carta2_2=(tela_largura/2)
-#    posição_y_carta2_2=(tela_altura/2)-50
-#    
-#    posição_x_carta2_3=(tela_largura/2)
-#    posição_y_carta2_3=(tela_altura/2)-50
 
     posição_x_carta3_1=(tela_largura/2)
     posição_y_carta3_1=(tela_altura/2)-50
@@ -137,14 +129,7 @@ def loop_de_jogo():
     posição_y_carta3_3=(tela_altura/2)-50
     
     
-#    posição_x_carta4_1=(tela_largura/2)
-#    posição_y_carta4_1=(tela_altura/2)-50
-#    
-#    posição_x_carta4_2=(tela_largura/2)
-#    posição_y_carta4_2=(tela_altura/2)-50
-#    
-#    posição_x_carta4_3=(tela_largura/2)
-#    posição_y_carta4_3=(tela_altura/2)-50
+
     
 #    mover_carta_y=0
 #    mover_carta_x=0
@@ -212,30 +197,7 @@ def loop_de_jogo():
         
         tela_truco.fill(verde)
         
-            
-        tela_truco.blit(manilha, [posição_x_carta1_1,posição_y_carta1_1])        
-        del imagens_baralho[jogo.vira]
         
-        
-#        tela_truco.blit(, [posição_x_carta1_1,posição_y_carta1_1])
-#        tela_truco.blit(jogo.mão_jogador_0[1], [posição_x_carta1_2,posição_y_carta1_2])
-#        tela_truco.blit(jogo.mão_jogador_0[2], [posição_x_carta1_3,posição_y_carta1_3])
-        
-#        tela_truco.blit(jogo.mão_jogador_1[0], [posição_x_carta3_1,posição_y_carta3_1])
-#        tela_truco.blit(jogo.mão_jogador_1[1], [posição_x_carta3_2,posição_y_carta3_2])
-#        tela_truco.blit(jogo.mão_jogador_1[2], [posição_x_carta3_3,posição_y_carta3_3])
-#        
-        tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho])
-
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])        
-#        
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
-#        tela_truco.blit(costas_da_carta, [posição_x_carta3_3,posição_y_carta3_3])
-
-        tela_truco.blit(costas_da_carta, [posição_x_baralho,posição_y_baralho])
         
         pygame.display.update()
     

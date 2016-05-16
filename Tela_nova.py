@@ -22,6 +22,7 @@ tela_largura=800
 tela_altura=600
 
 
+
 tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
 pygame.display.set_caption('Truco')
 
@@ -123,42 +124,50 @@ Rei_copas = pygame.transform.scale(Rei_copas, (int(largura_carta),int(altura_car
 Rei_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_spades_en.png")
 Rei_espadas = pygame.transform.scale(Rei_espadas, (int(largura_carta),int(altura_carta)))
 
-imagens_baralho=[Quatro_ouros,Quatro_espadas,Quatro_copas,Quatro_paus,
-                   Cinco_ouros,Cinco_espadas,Cinco_copas,Cinco_paus,
-                   Seis_ouros,Seis_espadas,Seis_copas,Seis_paus,
-                   Sete_ouros,Sete_espadas,Sete_copas,Sete_paus,
-                   Dama_ouros,Dama_espadas,Dama_copas,Dama_paus,
-                   Valete_ouros,Valete_espadas,Valete_copas,Valete_paus,
-                   Rei_ouros,Rei_espadas,Rei_copas,Rei_paus,
-                   As_ouros,As_espadas,As_copas,As_paus,
-                   Dois_ouros,Dois_espadas,Dois_copas,Dois_paus,
-                   Tres_ouros,Tres_espadas,Tres_copas,Tres_paus]
+imagens_baralho=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_paus,
+                   Cinco_ouros, Cinco_espadas, Cinco_copas, Cinco_paus,
+                   Seis_ouros, Seis_espadas, Seis_copas, Seis_paus,
+                   Sete_ouros, Sete_espadas, Sete_copas, Sete_paus,
+                   Dama_ouros, Dama_espadas, Dama_copas, Dama_paus,
+                   Valete_ouros, Valete_espadas, Valete_copas, Valete_paus,
+                   Rei_ouros, Rei_espadas, Rei_copas, Rei_paus,
+                   As_ouros, As_espadas, As_copas, As_paus,
+                   Dois_ouros, Dois_espadas, Dois_copas, Dois_paus,
+                   Tres_ouros, Tres_espadas, Tres_copas, Tres_paus]
                    
 
 jogo.manilha()
+print(jogo.vira)
 jogo.distribuir_cartas()
 
-carta_1_1 = imagens_baralho[jogo.carta_1]
-del imagens_baralho[jogo.carta_1]
-#print(carta_1_1)
-carta_1_2 = imagens_baralho[jogo.carta_2]
-del imagens_baralho[jogo.carta_2]
+imagem_manilha = imagens_baralho[jogo.vira]
+
+carta_1_1 = imagens_baralho[jogo.carta_1_1]
+del imagens_baralho[jogo.carta_1_1]
+#print(carta_1_1_1)
+carta_1_2 = imagens_baralho[jogo.carta_1_2]
+del imagens_baralho[jogo.carta_1_2]
 #print(carta_1_2)
-carta_1_3 = imagens_baralho[jogo.carta_3]
-del imagens_baralho[jogo.carta_3]
+carta_1_3 = imagens_baralho[jogo.carta_1_3]
+del imagens_baralho[jogo.carta_1_3]
 #print(carta_1_3)
 
-carta_3_1 = imagens_baralho[jogo.carta_4]
-del imagens_baralho[jogo.carta_4]
+carta_3_1 = imagens_baralho[jogo.carta_3_1]
+del imagens_baralho[jogo.carta_3_1]
 #print(carta_3_1)
-carta_3_2 = imagens_baralho[jogo.carta_5]
-del imagens_baralho[jogo.carta_5]
+carta_3_2 = imagens_baralho[jogo.carta_3_2]
+del imagens_baralho[jogo.carta_3_2]
 #print(carta_3_2)
-carta_3_3 = imagens_baralho[jogo.carta_6]
-del imagens_baralho[jogo.carta_6]
+carta_3_3 = imagens_baralho[jogo.carta_3_3]
+del imagens_baralho[jogo.carta_3_3]
 #print(carta_3_3)
 
-manilha = imagens_baralho[jogo.vira]
+posição_x_baralho=(tela_largura/2) 
+posição_y_baralho=(tela_altura/2) -50
+
+altura_carta = tela_altura/6 
+largura_carta = tela_altura/9
+
 
 
 def começando_partida():
@@ -168,34 +177,35 @@ def começando_partida():
 def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
+    apertou_ESPAÇO = False
+    '''Posição manilha'''
+    posição_x_manilha = (tela_largura/2)
+    posição_y_manilha = (tela_altura/2)-50
+    '''Posiçoes das cartas do Jogador de baixo'''
+    posição_x_carta1_1 = (tela_largura/2)
+    posição_y_carta1_1 = (tela_altura/2)-50
+    
+    posição_x_carta1_2 = (tela_largura/2)
+    posição_y_carta1_2 = (tela_altura/2)-50
+    
+    posição_x_carta1_3 = (tela_largura/2)
+    posição_y_carta1_3 = (tela_altura/2)-50
+    
+    '''Posiçoes das cartas do Jogador de cima'''
+    posição_x_carta3_1 = (tela_largura/2)
+    posição_y_carta3_1 = (tela_altura/2)-50
+    
+    posição_x_carta3_2 = (tela_largura/2)
+    posição_y_carta3_2 = (tela_altura/2)-50
+    
+    posição_x_carta3_3 = (tela_largura/2)
+    posição_y_carta3_3 = (tela_altura/2)-50
     while not fim_do_app:
         while fim_do_jogo == True:
             pass
-        posição_x_baralho=(tela_largura/2) 
-        posição_y_baralho=(tela_altura/2) -80
 
 
-
-        '''Posiçoes das cartas do Jogador de baixo'''
-        posição_x_carta1_1= posição_x_baralho
-        posição_y_carta1_1= posição_y_baralho
-        
-        posição_x_carta1_2= posição_x_baralho
-        posição_y_carta1_2= posição_y_baralho
-        
-        posição_x_carta1_3= posição_x_baralho
-        posição_y_carta1_3= posição_y_baralho
-        
-        '''Posiçoes das cartas do Jogador de cima'''
-        posição_x_carta3_1= posição_x_baralho
-        posição_y_carta3_1= posição_y_baralho
-        
-        posição_x_carta3_2= posição_x_baralho
-        posição_y_carta3_2= posição_y_baralho
-        
-        posição_x_carta3_3= posição_x_baralho
-        posição_y_carta3_3= posição_y_baralho
-
+       
         for event in pygame.event.get():
 #            print (event)
             
@@ -205,22 +215,25 @@ def loop_de_jogo():
                 
                     
                 if event.key == pygame.K_SPACE:
-                        posição_y_carta1_1 = tela_altura- altura_carta
-                        posição_y_carta1_2 = posição_y_carta1_1
-                        posição_y_carta1_3 = posição_y_carta1_2
-
-                        posição_y_carta3_1=0
-                        posição_y_carta3_2=0
-                        posição_y_carta3_3=0
-                        
-                        posição_x_carta1_1 -= largura_carta 
-                        posição_x_carta1_2 = posição_x_carta1_1 + largura_carta + 20
-                        posição_x_carta1_3 = posição_x_carta1_2 + largura_carta + 20
-                        
-                        posição_x_carta3_1 -= largura_carta 
-                        posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
-                        posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
-                        
+                        if apertou_ESPAÇO == False:                   
+                            posição_y_carta1_1 = tela_altura - altura_carta -50
+                            posição_y_carta1_2 = posição_y_carta1_1 
+                            posição_y_carta1_3 = posição_y_carta1_2 
+    
+                            posição_y_carta3_1=0
+                            posição_y_carta3_2=0
+                            posição_y_carta3_3=0
+                            
+                            posição_x_carta1_1 -= largura_carta 
+                            posição_x_carta1_2 = posição_x_carta1_1 + largura_carta + 20
+                            posição_x_carta1_3 = posição_x_carta1_2 + largura_carta + 20
+                            
+                            posição_x_carta3_1 -= largura_carta 
+                            posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
+                            posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
+                            
+                            
+                            apertou_ESPAÇO = True
                 if event.key == pygame.K_1:
                     posição_y_carta1_1=(tela_altura/2)-50
                     posição_x_carta1_1= posição_x_carta1_1=(tela_largura/2)+largura_carta+10
@@ -242,7 +255,7 @@ def loop_de_jogo():
                     posição_x_carta3_3= posição_x_carta3_3=(tela_largura/2)-largura_carta-10
                     
             tela_truco.fill(verde)
-            tela_truco.blit(manilha, [posição_x_baralho,posição_y_baralho])
+            tela_truco.blit(imagem_manilha, [posição_x_baralho,posição_y_baralho])
 
             tela_truco.blit(carta_1_1, [posição_x_carta1_1,posição_y_carta1_1])
             tela_truco.blit(carta_1_2, [posição_x_carta1_2,posição_y_carta1_2])
@@ -251,7 +264,8 @@ def loop_de_jogo():
             tela_truco.blit(carta_3_1, [posição_x_carta3_1,posição_y_carta3_1])
             tela_truco.blit(carta_3_2, [posição_x_carta3_2,posição_y_carta3_2])
             tela_truco.blit(carta_3_3, [posição_x_carta3_3,posição_y_carta3_3])
-
+            if apertou_ESPAÇO == False:        
+                tela_truco.blit(costas_da_carta,[posição_x_baralho,posição_y_baralho])
                     
             pygame.display.update()
     
