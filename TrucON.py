@@ -1,5 +1,4 @@
     
-    
 import random
 class Logica:
     def __init__(self):
@@ -221,7 +220,7 @@ class Logica:
                     self.ponto_rodada_jogador_1+=1
                     self.rodada = 2
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_0+=1
                     self.ponto_rodada_jogador_1+=1
@@ -237,7 +236,7 @@ class Logica:
                     self.ponto_rodada_jogador_1+=1
                     self.rodada = 3
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_0+=1
                     self.ponto_rodada_jogador_1+=1
@@ -253,7 +252,7 @@ class Logica:
                     self.ponto_rodada_jogador_1+=1
                     self.rodada+=1
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_0+=1
                     self.ponto_rodada_jogador_1+=1
@@ -271,7 +270,7 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.rodada+=1
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_1+=1
                     self.ponto_rodada_jogador_0+=1
@@ -287,7 +286,7 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.rodada+=1
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_1+=1
                     self.ponto_rodada_jogador_0+=1
@@ -303,7 +302,7 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.rodada+=1
                     return
-                else:
+                elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
                     self.ponto_rodada_jogador_1+=1
                     self.ponto_rodada_jogador_0+=1
@@ -359,14 +358,16 @@ class Logica:
         
     def pedir_truco(self):
         if self.jogador == 0:
+            print("RESPONDA TODAS AS PERGUNTAS EM CARACTERES MINÚSCULO E OS NÚMEROS POR EXTENSO")
             if self.pergunta == 'truco':
                 self.truco = True
                 print('O outro jogador pediu truco')
                 self.resposta = input('Cair no truco, correr ou pedir seis?')
-                if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                    self.valor_partida = 3
-                elif self.resposta == 'Seis' or 'seis' or '6':
-                    self.pedir_seis()                   
+               
+                if self.resposta == 'cair':   
+                    self.valor_partida = 3 # Atualizou o valor da partida
+                elif self.resposta == 'seis' :
+                    self.pedir_seis()
                 else:
                     self.ponto_jogo_jogador_0 += 1
                     self.acabar()
@@ -375,9 +376,9 @@ class Logica:
             if self.pergunta == 'truco':
                 print('O outro jogador pediu truco')
                 self.resposta = input('Cair no truco, correr ou pedir seis?')
-                if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                    self.valor_partida = 3
-                elif self.resposta == 'Seis' or 'seis' or '6':
+                if self.resposta == 'cair' :
+                    self.valor_partida = 3 # Atualizou o valor da partida
+                elif self.resposta == 'seis' or '6':
                     self.pedir_seis()
                 else:
                     self.ponto_jogo_jogador_1 += 1
@@ -386,21 +387,25 @@ class Logica:
 
     def pedir_seis(self):
         if self.jogador == 0:
+            if self.pergunta == 'seis':
+                self.seis = True
             print('O outro jogador pediu seis')
             self.resposta = input('Cair no seis, correr ou pedir nove?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 6
-            elif self.resposta == 'Nove' or 'nove' or '9':
+            if self.resposta == 'cair' :
+                self.valor_partida = 6 # Atualizou o valor da partida
+            elif self.resposta == 'nove':
                 self.pedir_nove()
             else:
                 self.ponto_jogo_jogador_0 += 3
 
         if self.jogador == 1:
-            print('O outro jogador pediu seis')
+            if self.resposta == 'seis' :
+                self.seis = True
+            print('O outro jogador pediu seis')  
             self.resposta = input('Cair no seis, correr ou pedir nove?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 6
-            elif self.resposta == 'Nove' or 'nove' or '9':
+            if self.resposta == 'cair' :
+                self.valor_partida = 6 # Atualizou o valor da partida
+            elif self.resposta ==  'nove':
                 self.pedir_nove()
             else:
                 self.ponto_jogo_jogador_1 += 3
@@ -410,20 +415,24 @@ class Logica:
 
     def pedir_nove(self):
         if self.jogador == 0:
+            if self.pergunta == 'nove':
+                self.nove = True
             print('O outro jogador pediu nove')
             self.resposta = input('Cair no nove, correr ou pedir doze?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 9
-            elif self.resposta == 'doze' or 'Doze' or '12':
+            if self.resposta == 'cair':
+                self.valor_partida = 9 # Atualizou o valor da partida
+            elif self.resposta == 'doze' or '12':
                 self.pedir_doze()
             else:
                 self.ponto_jogo_jogador_0 += 6
         
         if self.jogador == 1:
+            if self.pergunta == 'nove' :
+                self.nove = True
             print('O outro jogador pediu nove')
             self.resposta = input('Cair no nove, correr ou pedir doze?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 9
+            if self.resposta == 'cair' :
+                self.valor_partida = 9 # Atualizou o valor da partida
             elif self.resposta == 'doze' or 'Doze' or '12':
                 self.pedir_doze()
             else:
@@ -432,23 +441,24 @@ class Logica:
 
     def pedir_doze(self):
         if self.jogador == 0:
+            if self.pergunta == "doze":
+                self.doze = True
             print('O outro jogador pediu doze')
             self.resposta = input('Cair no doze ou correr?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 12
+            if self.resposta == 'cair' :
+                self.valor_partida = 12 # Atualizou o valor da partida
             else:
                 self.ponto_jogo_jogador_0 += 9
         
         if self.jogador == 1:
+            if self.pergunta == "doze":
+                self.doze = True
             print('O outro jogador pediu doze')
             self.resposta = input('Cair no doze ou correr?')
-            if self.resposta == 'cair' or 'sim' or 'Cair' or 'Sim':
-                self.valor_partida = 12
+            if self.resposta == 'cair' :
+                self.valor_partida = 12 # Atualizou o valor da partida
             else:
                 self.ponto_jogo_jogador_1 += 9
-           
-
-        
 
             
 
@@ -519,4 +529,5 @@ jogo.gameloop()
 #print(jogo.ponto_rodada_jogador_1)
 #
 #
-#print(jogo.placar())
+#print(jogo.placar())    
+    
