@@ -92,12 +92,10 @@ class Logica:
             
     def distribuir_cartas(self):
         self.carta_1_1 = random.randint(0,38)
-        while not self.baralho[self.carta_1_1] == "-1":
-            if self.baralho[self.carta_1_1] == "-1":
-                self.carta_1_1 = random.randint(0,38)
-            else:
-                self.mao_jogador_0.append(self.baralho[self.carta_1_1])
-                self.baralho[self.carta_1_1] = "-1"
+        while self.baralho[self.carta_1_1] == "-1":
+            self.carta_1_1 = random.randint(0,38)
+        self.mao_jogador_0.append(self.baralho[self.carta_1_1]) # Mudar as outras cartas
+        self.baralho[self.carta_1_1] = "-1"
         
         self.carta_1_2 = random.randint(0,38)
         while not self.baralho[self.carta_1_2] == "-1":
