@@ -1,3 +1,4 @@
+    
 import random
 class Logica:
     def __init__(self):
@@ -98,44 +99,34 @@ class Logica:
         self.baralho[self.carta_1_1] = "-1"
         
         self.carta_1_2 = random.randint(0,38)
-        while not self.baralho[self.carta_1_2] == "-1":
-            if self.baralho[self.carta_1_2] == "-1":
-                self.carta_1_2 = random.randint(0,38)
-            else:
-                self.mao_jogador_0.append(self.baralho[self.carta_1_2])
-                self.baralho[self.carta_1_2] = "-1"
+        while self.baralho[self.carta_1_2] == "-1":
+            self.carta_1_2 = random.randint(0,38)          
+        self.mao_jogador_0.append(self.baralho[self.carta_1_2])
+        self.baralho[self.carta_1_2] = "-1"
         
         self.carta_1_3 = random.randint(0,38)
-        while not self.baralho[self.carta_1_3] == "-1":
-            if self.baralho[self.carta_1_3] == "-1":
-                self.carta_1_3 = random.randint(0,38)
-            else:
-                self.mao_jogador_0.append(self.baralho[self.carta_1_3])
-                self.baralho[self.carta_1_3] = "-1"
+        while self.baralho[self.carta_1_3] == "-1":
+            self.carta_1_3 = random.randint(0,38)
+        self.mao_jogador_0.append(self.baralho[self.carta_1_3])
+        self.baralho[self.carta_1_3] = "-1"
         
         self.carta_3_1 = random.randint(0,38)
-        while not self.baralho[self.carta_3_1] == "-1":
-            if self.baralho[self.carta_3_1] == "-1":
-                self.carta_3_1 = random.randint(0,38)
-            else:
-                self.mao_jogador_1.append(self.baralho[self.carta_3_1])
-                self.baralho[self.carta_3_1] = "-1"
+        while self.baralho[self.carta_3_1] == "-1":
+            self.carta_3_1 = random.randint(0,38)
+        self.mao_jogador_1.append(self.baralho[self.carta_3_1])
+        self.baralho[self.carta_3_1] = "-1"
         
         self.carta_3_2 = random.randint(0,38)
-        while not self.baralho[self.carta_3_2] == "-1":
-            if self.baralho[self.carta_3_2] == "-1":
-                self.carta_3_2 = random.randint(0,38)
-            else:
-                self.mao_jogador_1.append(self.baralho[self.carta_3_2])
-                self.baralho[self.carta_3_2] = "-1"
+        while self.baralho[self.carta_3_2] == "-1":
+            self.carta_3_2 = random.randint(0,38)
+        self.mao_jogador_1.append(self.baralho[self.carta_3_2])
+        self.baralho[self.carta_3_2] = "-1"
         
         self.carta_3_3 = random.randint(0,38)
-        while not self.baralho[self.carta_3_3] == "-1":
-            if self.baralho[self.carta_3_3] == "-1":
-                self.carta_3_3 = random.randint(0,38)
-            else:
-                self.mao_jogador_1.append(self.baralho[self.carta_3_3])
-                self.baralho[self.carta_3_3] = "-1"
+        while self.baralho[self.carta_3_3] == "-1":
+            self.carta_3_3 = random.randint(0,38)          
+        self.mao_jogador_1.append(self.baralho[self.carta_3_3])
+        self.baralho[self.carta_3_3] = "-1"
         
         print (self.baralho)
         print (self.mao_jogador_0)
@@ -220,7 +211,7 @@ class Logica:
     def verifica_ganhador(self):
         if self.jogador == 0: 
             if self.rodada==1:
-                if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]:
+                if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_0+=1
                     self.rodada+=1
                     return
@@ -530,7 +521,7 @@ class Logica:
                 self.ponto_jogo_jogador_1 += 9
 
     def fim (self):
-        while self.ponto_rodada_jogador_0 < 2 or self.ponto_rodada_jogador_1 < 2:
+        while True self.ponto_rodada_jogador_0 < 2 or self.ponto_rodada_jogador_1 < 2 or :
              pass 
 
         if self.ponto_rodada_jogador_0 >= 2 or self.ponto_rodada_jogador_1 >= 2:
