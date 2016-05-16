@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 Created on Fri May 13 15:12:27 2016
 
@@ -8,6 +8,14 @@ Created on Fri May 13 15:12:27 2016
 import pygame
 import time
 from TrucON import Logica
+
+class EstadoInterface:
+    def __init__(self):
+        self.reset()
+    def reset(self):
+        self.carta_1_1clicada = False
+estado = EstadoInterface()
+
 jogo=Logica()
 
 pygame.init()
@@ -134,35 +142,19 @@ imagens_baralho_original=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_pau
                    As_ouros, As_espadas, As_copas, As_paus,
                    Dois_ouros, Dois_espadas, Dois_copas, Dois_paus,
                    Tres_ouros, Tres_espadas, Tres_copas, Tres_paus]
+
                    
 imagens_baralho = imagens_baralho_original[:]
                    
+
+#copiar lista/fazer um original = a=[]
+# b = a[]
+
 
 jogo.manilha()
 print(jogo.vira)
 jogo.distribuir_cartas()
 
-imagem_manilha = imagens_baralho[jogo.vira]
-
-carta_1_1 = imagens_baralho[jogo.carta_1_1]
-del imagens_baralho[jogo.carta_1_1]
-#print(carta_1_1_1)
-carta_1_2 = imagens_baralho[jogo.carta_1_2]
-del imagens_baralho[jogo.carta_1_2]
-#print(carta_1_2)
-carta_1_3 = imagens_baralho[jogo.carta_1_3]
-del imagens_baralho[jogo.carta_1_3]
-#print(carta_1_3)
-
-carta_3_1 = imagens_baralho[jogo.carta_3_1]
-del imagens_baralho[jogo.carta_3_1]
-#print(carta_3_1)
-carta_3_2 = imagens_baralho[jogo.carta_3_2]
-del imagens_baralho[jogo.carta_3_2]
-#print(carta_3_2)
-carta_3_3 = imagens_baralho[jogo.carta_3_3]
-del imagens_baralho[jogo.carta_3_3]
-#print(carta_3_3)
 
 posição_x_baralho=(tela_largura/2) 
 posição_y_baralho=(tela_altura/2) -50
@@ -172,14 +164,59 @@ largura_carta = tela_altura/9
 
 
 
-def começando_partida():
-    jogo.manilha()
-    jogo.distribuir_cartas()
+
+
+
+        
     
 def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
     apertou_ESPAÇO = False
+    inicio_da_partida = True
+
+    
+    if inicio_da_partida == True:
+        jogou_carta_1_1 = False
+        jogou_carta_1_2 = False
+        jogou_carta_1_3 = False
+    
+        jogou_carta_3_1 = False
+        jogou_carta_3_2 = False
+        jogou_carta_3_2 = False
+    
+        jogo.manilha()
+        print(jogo.vira)
+        jogo.distribuir_cartas()
+
+        imagem_manilha = imagens_baralho[jogo.vira]
+
+        carta_1_1 = imagens_baralho[jogo.carta_1_1]
+        del imagens_baralho[jogo.carta_1_1]
+        #print(carta_1_1_1)
+        carta_1_2 = imagens_baralho[jogo.carta_1_2 -1]
+        del imagens_baralho[jogo.carta_1_2 -1]
+        #print(carta_1_2)
+        carta_1_3 = imagens_baralho[jogo.carta_1_3 -2]
+        del imagens_baralho[jogo.carta_1_3 - 2]
+        #print(carta_1_3)
+    
+        carta_3_1 = imagens_baralho[jogo.carta_3_1 -3]
+        del imagens_baralho[jogo.carta_3_1 -3]
+        #print(carta_3_1)
+        carta_3_2 = imagens_baralho[jogo.carta_3_2 -4]
+        del imagens_baralho[jogo.carta_3_2 - 4]
+        #print(carta_3_2)
+        carta_3_3 = imagens_baralho[jogo.carta_3_3 -5]
+        del imagens_baralho[jogo.carta_3_3 -5]
+        #print(carta_3_3)
+        
+        inicio_da_partida = False
+        
+    
+        
+        
+
     '''Posição manilha'''
     posição_x_manilha = (tela_largura/2)
     posição_y_manilha = (tela_altura/2)-50
@@ -239,23 +276,27 @@ def loop_de_jogo():
                 if event.key == pygame.K_1:
                     posição_y_carta1_1=(tela_altura/2)-50
                     posição_x_carta1_1= posição_x_carta1_1=(tela_largura/2)+largura_carta+10
+                    jogou_carta_1_1 = True
                 if event.key == pygame.K_2:
                     posição_y_carta1_2=(tela_altura/2)-50
                     posição_x_carta1_2= posição_x_carta1_2=(tela_largura/2)+largura_carta+40
+                    jogou_carta_1_2 = True
                 if event.key == pygame.K_3:
                     posição_y_carta1_3=(tela_altura/2)-50
                     posição_x_carta1_3= posição_x_carta1_3=(tela_largura/2)+largura_carta+70
-                    
+                    jogou_carta_1_3 = True
                 if event.key == pygame.K_4:
                     posição_y_carta3_1=(tela_altura/2)-50
                     posição_x_carta3_1= posição_x_carta3_1=(tela_largura/2)-largura_carta-70
+                    jogou_carta_3_1 = True
                 if event.key == pygame.K_5:
                     posição_y_carta3_2=(tela_altura/2)-50
                     posição_x_carta3_2= posição_x_carta3_2=(tela_largura/2)-largura_carta-40
+                    jogou_carta_3_2 = True
                 if event.key == pygame.K_6:
                     posição_y_carta3_3=(tela_altura/2)-50
                     posição_x_carta3_3= posição_x_carta3_3=(tela_largura/2)-largura_carta-10
-                    
+                    jogou_carta_3_3 = True
             tela_truco.fill(verde)
             tela_truco.blit(imagem_manilha, [posição_x_baralho,posição_y_baralho])
 
