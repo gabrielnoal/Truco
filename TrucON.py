@@ -1,6 +1,7 @@
     
     
     
+    
 import random
 class Logica:
     def __init__(self):
@@ -349,10 +350,32 @@ class Logica:
         self.mao_jogador_0=[]
         self.mao_jogador_1=[]
         self.mesa=[]
+        self.rodada = 1
         self.ponto_rodada_jogador_0=0
         self.ponto_rodada_jogador_1=0   
         self.valor_partida=1
         self.truco = False
+        self.baralho = ['Quatro_ouros','Quatro_espadas','Quatro_copas','Quatro_paus',
+                   'Cinco_ouros','Cinco_espadas','Cinco_copas','Cinco_paus',
+                   'Seis_ouros','Seis_espadas','Seis_copas','Seis_paus',
+                   'Sete_ouros','Sete_espadas','Sete_copas','Sete_paus',
+                   'Dama_ouros','Dama_espadas','Dama_copas','Dama_paus',
+                   'Valete_ouros','Valete_espadas','Valete_copas','Valete_paus',
+                   'Rei_ouros','Rei_espadas','Rei_copas','Rei_paus',
+                   'As_ouros','As_espadas','As_copas','As_paus',
+                   'Dois_ouros','Dois_espadas','Dois_copas','Dois_paus',
+                   'Tres_ouros','Tres_espadas','Tres_copas','Tres_paus']
+                   
+        self.dic_baralho = {'Quatro_ouros':1,'Quatro_espadas':1,'Quatro_copas':1,'Quatro_paus':1,
+                            'Cinco_ouros':2,'Cinco_espadas':2,'Cinco_copas':2,'Cinco_paus':2,
+                            'Seis_ouros':3,'Seis_espadas':3,'Seis_copas':3,'Seis_paus':3,
+                            'Sete_ouros':4,'Sete_espadas':4,'Sete_copas':4,'Sete_paus':4,
+                            'Dama_ouros':5,'Dama_espadas':5,'Dama_copas':5,'Dama_paus':5,
+                            'Valete_ouros':6,'Valete_espadas':6,'Valete_copas':6,'Valete_paus':6,
+                            'Rei_ouros':7,'Rei_espadas':7,'Rei_copas':7,'Rei_paus':7,
+                            'As_ouros':8,'As_espadas':8,'As_copas':8,'As_paus':8,
+                            'Dois_ouros':9,'Dois_espadas':9,'Dois_copas':9,'Dois_paus':9,
+                            'Tres_ouros':10,'Tres_espadas':10,'Tres_copas':10,'Tres_paus':10}
             
         
         
@@ -516,7 +539,7 @@ class Logica:
         self.limpa_jogadas()
         self.verifica_ganhador_partida()
         self.fim_rodada()
-        
+    
 
 
 jogo=Logica()
