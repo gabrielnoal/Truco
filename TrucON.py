@@ -51,13 +51,13 @@ class Logica:
             self.zap = self.baralho[3]
             
             print("A vira é o: {0}".format(self.baralho[self.vira]))
-            del self.baralho[self.vira]
+            self.baralho[self.vira] = "-1"
             self.dic_baralho[self.pika]=11
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
 #            print(self.baralho)            
-            return self.vira
+            return
             
             
         else:
@@ -86,48 +86,49 @@ class Logica:
                 self.zap = self.baralho[self.vira+4]
                    
             print("A vira é o: {0}".format(self.baralho[self.vira]))
-            del self.baralho[self.vira]
+            self.baralho[self.vira] = "-1"
             self.dic_baralho[self.pika]=11
             self.dic_baralho[self.espadilha]=12
             self.dic_baralho[self.copa]=13
             self.dic_baralho[self.zap]=14
 #            print(self.baralho)            
-            return self.vira
+            return
             
     def distribuir_cartas(self):
-        self.carta_1_1 = random.randint(0,38)
+#        print(len(self.baralho))
+        self.carta_1_1 = random.randint(0,39)
         while self.baralho[self.carta_1_1] == "-1":
-            self.carta_1_1 = random.randint(0,38)
+            self.carta_1_1 = random.randint(0,39)
         self.mao_jogador_0.append(self.baralho[self.carta_1_1]) # Mudar as outras cartas
         self.baralho[self.carta_1_1] = "-1"
         
-        self.carta_1_2 = random.randint(0,38)
+        self.carta_1_2 = random.randint(0,39)
         while self.baralho[self.carta_1_2] == "-1":
-            self.carta_1_2 = random.randint(0,38)          
+            self.carta_1_2 = random.randint(0,39)          
         self.mao_jogador_0.append(self.baralho[self.carta_1_2])
         self.baralho[self.carta_1_2] = "-1"
         
-        self.carta_1_3 = random.randint(0,38)
+        self.carta_1_3 = random.randint(0,39)
         while self.baralho[self.carta_1_3] == "-1":
-            self.carta_1_3 = random.randint(0,38)
+            self.carta_1_3 = random.randint(0,39)
         self.mao_jogador_0.append(self.baralho[self.carta_1_3])
         self.baralho[self.carta_1_3] = "-1"
         
-        self.carta_3_1 = random.randint(0,38)
+        self.carta_3_1 = random.randint(0,39)
         while self.baralho[self.carta_3_1] == "-1":
-            self.carta_3_1 = random.randint(0,38)
+            self.carta_3_1 = random.randint(0,39)
         self.mao_jogador_1.append(self.baralho[self.carta_3_1])
         self.baralho[self.carta_3_1] = "-1"
         
-        self.carta_3_2 = random.randint(0,38)
+        self.carta_3_2 = random.randint(0,39)
         while self.baralho[self.carta_3_2] == "-1":
-            self.carta_3_2 = random.randint(0,38)
+            self.carta_3_2 = random.randint(0,39)
         self.mao_jogador_1.append(self.baralho[self.carta_3_2])
         self.baralho[self.carta_3_2] = "-1"
         
-        self.carta_3_3 = random.randint(0,38)
+        self.carta_3_3 = random.randint(0,39)
         while self.baralho[self.carta_3_3] == "-1":
-            self.carta_3_3 = random.randint(0,38)          
+            self.carta_3_3 = random.randint(0,39)          
         self.mao_jogador_1.append(self.baralho[self.carta_3_3])
         self.baralho[self.carta_3_3] = "-1"
         
@@ -542,8 +543,8 @@ class Logica:
     
 
 
-jogo=Logica()
-jogo.gameloop()
+#jogo=Logica()
+#jogo.gameloop()
 
 
 #print(jogo.distribuir_cartas())

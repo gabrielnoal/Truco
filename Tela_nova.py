@@ -9,12 +9,7 @@ import pygame
 import time
 from TrucON import Logica
 
-class EstadoInterface:
-    def __init__(self):
-        self.reset()
-    def reset(self):
-        self.carta_1_1clicada = False
-estado = EstadoInterface()
+
 
 jogo=Logica()
 
@@ -142,18 +137,11 @@ imagens_baralho_original=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_pau
                    As_ouros, As_espadas, As_copas, As_paus,
                    Dois_ouros, Dois_espadas, Dois_copas, Dois_paus,
                    Tres_ouros, Tres_espadas, Tres_copas, Tres_paus]
-
-                   
-imagens_baralho = imagens_baralho_original[:]
                    
 
 #copiar lista/fazer um original = a=[]
-# b = a[]
+# b = a[:]
 
-
-jogo.manilha()
-print(jogo.vira)
-jogo.distribuir_cartas()
 
 
 posição_x_baralho=(tela_largura/2) 
@@ -161,10 +149,6 @@ posição_y_baralho=(tela_altura/2) -50
 
 altura_carta = tela_altura/6 
 largura_carta = tela_altura/9
-
-
-
-
 
 
         
@@ -184,33 +168,21 @@ def loop_de_jogo():
         jogou_carta_3_1 = False
         jogou_carta_3_2 = False
         jogou_carta_3_2 = False
-    
+        imagens_baralho = imagens_baralho_original[:]
+        
         jogo.manilha()
         print(jogo.vira)
         jogo.distribuir_cartas()
-
+        
+        
         imagem_manilha = imagens_baralho[jogo.vira]
 
         carta_1_1 = imagens_baralho[jogo.carta_1_1]
-        del imagens_baralho[jogo.carta_1_1]
-        #print(carta_1_1_1)
-        carta_1_2 = imagens_baralho[jogo.carta_1_2 -1]
-        del imagens_baralho[jogo.carta_1_2 -1]
-        #print(carta_1_2)
-        carta_1_3 = imagens_baralho[jogo.carta_1_3 -2]
-        del imagens_baralho[jogo.carta_1_3 - 2]
-        #print(carta_1_3)
-    
-        carta_3_1 = imagens_baralho[jogo.carta_3_1 -3]
-        del imagens_baralho[jogo.carta_3_1 -3]
-        #print(carta_3_1)
-        carta_3_2 = imagens_baralho[jogo.carta_3_2 -4]
-        del imagens_baralho[jogo.carta_3_2 - 4]
-        #print(carta_3_2)
-        carta_3_3 = imagens_baralho[jogo.carta_3_3 -5]
-        del imagens_baralho[jogo.carta_3_3 -5]
-        #print(carta_3_3)
-        
+        carta_1_2 = imagens_baralho[jogo.carta_1_2]
+        carta_1_3 = imagens_baralho[jogo.carta_1_3]    
+        carta_3_1 = imagens_baralho[jogo.carta_3_1]
+        carta_3_2 = imagens_baralho[jogo.carta_3_2]
+        carta_3_3 = imagens_baralho[jogo.carta_3_3]
         inicio_da_partida = False
         
     
