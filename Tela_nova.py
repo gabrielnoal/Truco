@@ -322,24 +322,37 @@ def loop_de_jogo():
                 
             tela_truco.fill(verde)
             tela_truco.blit(imagem_manilha, [posição_x_baralho,posição_y_baralho])
+            
             if jogo.jogador == 0:
-                tela_truco.blit(carta_1_1, [posição_x_carta1_1,posição_y_carta1_1])
-                tela_truco.blit(carta_1_2, [posição_x_carta1_2,posição_y_carta1_2])
-                tela_truco.blit(carta_1_3, [posição_x_carta1_3,posição_y_carta1_3])
+                if jogo.mao_jogador_0[0] != -1:
+                    tela_truco.blit(carta_1_1, [posição_x_carta1_1,posição_y_carta1_1])
+                if jogo.mao_jogador_0[1] != -1:                    
+                    tela_truco.blit(carta_1_2, [posição_x_carta1_2,posição_y_carta1_2])
+                if jogo.mao_jogador_0[2] != -1:
+                    tela_truco.blit(carta_1_3, [posição_x_carta1_3,posição_y_carta1_3])
                 
-                tela_truco.blit(costas_da_carta,[posição_x_carta3_1,posição_y_carta3_1])
-                tela_truco.blit(costas_da_carta,[posição_x_carta3_2,posição_y_carta3_2])
-                tela_truco.blit(costas_da_carta,[posição_x_carta3_3,posição_y_carta3_3])
+                if jogo.mao_jogador_0[0] != -1:                
+                    tela_truco.blit(costas_da_carta,[posição_x_carta3_1,posição_y_carta3_1])
+                if jogo.mao_jogador_0[1] != -1:            
+                    tela_truco.blit(costas_da_carta,[posição_x_carta3_2,posição_y_carta3_2])
+                if jogo.mao_jogador_0[2] != -1:
+                    tela_truco.blit(costas_da_carta,[posição_x_carta3_3,posição_y_carta3_3])
 
             elif jogo.jogador == 1:
-                tela_truco.blit(carta_3_1, [posição_x_carta3_1,posição_y_carta3_1])
-                tela_truco.blit(carta_3_2, [posição_x_carta3_2,posição_y_carta3_2])
-                tela_truco.blit(carta_3_3, [posição_x_carta3_3,posição_y_carta3_3])
-            
-                tela_truco.blit(costas_da_carta,[posição_x_carta1_1,posição_y_carta1_1])
-                tela_truco.blit(costas_da_carta,[posição_x_carta1_2,posição_y_carta1_2])
-                tela_truco.blit(costas_da_carta,[posição_x_carta1_3,posição_y_carta1_3])
-            
+                if jogo.mao_jogador_1[0] != -1:
+                    tela_truco.blit(carta_3_1, [posição_x_carta3_1,posição_y_carta3_1])
+                if jogo.mao_jogador_1[1] != -1:
+                    tela_truco.blit(carta_3_2, [posição_x_carta3_2,posição_y_carta3_2])
+                if jogo.mao_jogador_1[2] != -1:                    
+                    tela_truco.blit(carta_3_3, [posição_x_carta3_3,posição_y_carta3_3])
+                    
+                if jogo.mao_jogador_1[0] != -1:
+                    tela_truco.blit(costas_da_carta,[posição_x_carta1_1,posição_y_carta1_1])
+                if jogo.mao_jogador_0[1] != -1:
+                    tela_truco.blit(costas_da_carta,[posição_x_carta1_2,posição_y_carta1_2])
+                if jogo.mao_jogador_0[2] != -1:
+                    tela_truco.blit(costas_da_carta,[posição_x_carta1_3,posição_y_carta1_3])
+
             
             if apertou_ESPAÇO == False:        
                 tela_truco.blit(costas_da_carta,[posição_x_baralho,posição_y_baralho])
