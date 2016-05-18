@@ -352,8 +352,8 @@ class Logica:
             print("Pontos na partida jogador 1:", self.ponto_rodada_jogador_0)
             print("Pontos na partida jogador 0:", self.ponto_rodada_jogador_1)  
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_0 = 1 
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_1 = 1  
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1 
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1  
             self.valor_partida=1  
             self.truco = True
             self.reset()
@@ -365,8 +365,8 @@ class Logica:
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_1 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
             self.valor_partida=1  
             self.truco = True
             self.reset()
@@ -378,26 +378,26 @@ class Logica:
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_1 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
             self.valor_partida=3 
             self.seis = True
             self.reset()
 
-         if self.resposta == 'correr do seis':
+        if self.resposta == 'correr do seis':
             print("Jogador 1 ganhou a rodada")
             print()
             self.ponto_rodada_jogador_1 += self.valor_partida
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_1 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
             self.valor_partida=3 
             self.seis = True
             self.reset()    
 
-        if self.resposta == "correr do nove" # Caso em que um jogador pediu nove e o outro correu
+        if self.resposta == "correr do nove": # Caso em que um jogador pediu nove e o outro correu
             print("Jogador 0 ganhou a rodada")
             print()
             self.ponto_rodada_jogador_0 += self.valor_partida
@@ -405,15 +405,15 @@ class Logica:
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_1 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
             self.valor_partida=6 
             self.nove = True
             self.reset()      
 
 
 
-        if self.resposta == "correr do nove" # Caso em que um jogador pediu nove e o outro correu
+        if self.resposta == "correr do nove":# Caso em que um jogador pediu nove e o outro correu
             print("Jogador 1 ganhou a rodada")
             print()
             self.ponto_rodada_jogador_1 += self.valor_partida
@@ -421,37 +421,37 @@ class Logica:
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_1 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
             self.valor_partida=6 
             self.nove = True
             self.reset()          
 
 
-        if self.resposta == "correr do doze" # Caso em que um jogador pediu doze e o outro correu
+        if self.resposta == "correr do doze": # Caso em que um jogador pediu doze e o outro correu
             print("Jogador 0 ganhou a rodada") 
             print()
             self.ponto_rodada_jogador_0 += self.valor_partida
             self.ponto_rodada_jogador_1 += self.valor_partida
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1   
-             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_0 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_1 = 1
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1
             self.valor_partida=9 
             self.doze = True
             self.reset()     
 
-         if self.resposta == "correr do doze" # Caso em que um jogador pediu doze e o outro correu
+        if self.resposta == "correr do doze": # Caso em que um jogador pediu doze e o outro correu
             print("Jogador 1 ganhou a rodada") 
             print()
             self.ponto_rodada_jogador_1 += self.valor_partida
             self.ponto_rodada_jogador_0 += self.valor_partida
             print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
             print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0   
-             self.rodada = 4
-            self.ponto_rodada_jogador_0=0 or self.ponto_rodada_jogador_0 = 1
-            self.ponto_rodada_jogador_1=0 or self.ponto_rodada_jogador_1 = 1
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1
             self.valor_partida=9 
             self.doze = True
             self.reset()         
