@@ -345,7 +345,116 @@ class Logica:
             self.truco = False
             self.reset()
 
+        if self.resposta == 'correr': # Caso que um jogador pediu Truco e o outro correu
+            print('Jogador 0 ganhou a rodada')
+            print()
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            print("Pontos na partida jogador 1:", self.ponto_rodada_jogador_0)
+            print("Pontos na partida jogador 0:", self.ponto_rodada_jogador_1)  
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1 
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1  
+            self.valor_partida=1  
+            self.truco = True
+            self.reset()
 
+        if self.resposta == 'correr':  
+            print("Jogador 1 ganhou a rodada") 
+            print()
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
+            self.valor_partida=1  
+            self.truco = True
+            self.reset()
+
+        if self.resposta == 'correr do seis': # Caso em que o jogador pediu 6 e o outro correu
+            print("Jogador 0 ganhou a rodada")
+            print()
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
+            self.valor_partida=3 
+            self.seis = True
+            self.reset()
+
+        if self.resposta == 'correr do seis':
+            print("Jogador 1 ganhou a rodada")
+            print()
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
+            self.valor_partida=3 
+            self.seis = True
+            self.reset()    
+
+        if self.resposta == "correr do nove": # Caso em que um jogador pediu nove e o outro correu
+            print("Jogador 0 ganhou a rodada")
+            print()
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
+            self.valor_partida=6 
+            self.nove = True
+            self.reset()      
+
+
+
+        if self.resposta == "correr do nove":# Caso em que um jogador pediu nove e o outro correu
+            print("Jogador 1 ganhou a rodada")
+            print()
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_1 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_0 = 1
+            self.valor_partida=6 
+            self.nove = True
+            self.reset()          
+
+
+        if self.resposta == "correr do doze": # Caso em que um jogador pediu doze e o outro correu
+            print("Jogador 0 ganhou a rodada") 
+            print()
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1   
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1
+            self.valor_partida=9 
+            self.doze = True
+            self.reset()     
+
+        if self.resposta == "correr do doze": # Caso em que um jogador pediu doze e o outro correu
+            print("Jogador 1 ganhou a rodada") 
+            print()
+            self.ponto_rodada_jogador_1 += self.valor_partida
+            self.ponto_rodada_jogador_0 += self.valor_partida
+            print("Pontos na partida jogador 1:"), self.ponto_rodada_jogador_1
+            print("Pontos na partida jogador 0:"), self.ponto_rodada_jogador_0   
+            self.rodada = 4
+            self.ponto_rodada_jogador_0=0 #or self.ponto_rodada_jogador_0 = 1
+            self.ponto_rodada_jogador_1=0 #or self.ponto_rodada_jogador_1 = 1
+            self.valor_partida=9 
+            self.doze = True
+            self.reset()         
 
     def reset(self):
         self.mao_jogador_0=[]
@@ -402,8 +511,8 @@ class Logica:
                     self.valor_partida = 3 # Atualizou o valor da partida
                 elif self.resposta == 'seis' :
                     self.pedir_seis()
-                else:
-                    self.correr()
+                elif self.resposta == 'correr':
+                    self.fim_rodada()
 
         if self.jogador == 1:
             if self.pergunta == 'truco':
@@ -413,9 +522,8 @@ class Logica:
                     self.valor_partida = 3 # Atualizou o valor da partida
                 elif self.resposta == 'seis' or '6':
                     self.pedir_seis()
-                else:
-                    self.correr()
-
+                elif self.resposta == 'correr':
+                    self.fim_rodada()
 
 
     def pedir_seis(self):
@@ -428,8 +536,8 @@ class Logica:
                 self.valor_partida = 6 # Atualizou o valor da partida
             elif self.resposta == 'nove':
                 self.pedir_nove()
-            else:
-                self.correr()
+            elif self.resposta == 'correr do seis':
+                    self.fim_rodada()
 
         if self.jogador == 1:
             if self.resposta == 'seis' :
@@ -440,8 +548,8 @@ class Logica:
                 self.valor_partida = 6 # Atualizou o valor da partida
             elif self.resposta ==  'nove':
                 self.pedir_nove()
-            else:
-                self.correr()
+            elif self.resposta == 'correr do seis':
+                self.fim_rodada()
             
 
 
@@ -456,8 +564,8 @@ class Logica:
                 self.valor_partida = 9 # Atualizou o valor da partida
             elif self.resposta == 'doze' or '12':
                 self.pedir_doze()
-            else:
-                self.correr()
+            elif self.resposta == 'correr do nove':
+                    self.fim_rodada()
         
         if self.jogador == 1:
             if self.pergunta == 'nove' :
@@ -468,9 +576,8 @@ class Logica:
                 self.valor_partida = 9 # Atualizou o valor da partida
             elif self.resposta == 'doze' or 'Doze' or '12':
                 self.pedir_doze()
-            else:
-                self.correr()
-        
+            elif self.resposta == 'correr do nove':
+                    self.fim_rodada()
 
     def pedir_doze(self):
         if self.jogador == 0:
@@ -480,8 +587,8 @@ class Logica:
             self.resposta = input('Cair no doze ou correr?')
             if self.resposta == 'cair' :
                 self.valor_partida = 12 # Atualizou o valor da partida
-            else:
-                self.correr()
+            elif self.resposta == 'correr do doze':
+                    self.fim_rodada()
         
         if self.jogador == 1:
             if self.pergunta == "doze":
@@ -490,17 +597,8 @@ class Logica:
             self.resposta = input('Cair no doze ou correr?')
             if self.resposta == 'cair' :
                 self.valor_partida = 12 # Atualizou o valor da partida
-            else:
-                self.correr()
-
-
-    def correr(self):
-        if self.jogador == 1:
-            self.ponto_jogo_jogador_1 += self.valor_partida
-        if self.jogador == 0:
-            self.ponto_jogo_jogador_0 += self.valor_partida
-        self.fim_rodada()
-
+            elif self.resposta == 'correr do doze':
+                    self.fim_rodada()
 
 
             
