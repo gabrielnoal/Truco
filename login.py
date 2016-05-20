@@ -1,6 +1,6 @@
 import pygame
 import time
-from TrucON import Logica
+from TrucOFF import Logica
 
 
 
@@ -22,25 +22,25 @@ tela_inicio = pygame.display.set_mode((tela_largura,tela_altura))
 pygame.display.set_caption('TrucOFF')
 
 
-imagem_entrar = pygame.image.load('/home/moreira/Desktop/Truco-master/entrar.png')
-imagem_entrar_clicado = pygame.image.load('/home/moreira/Desktop/Truco-master/entrar_clicado.png')
-imagem_logo = pygame.image.load('/home/moreira/Desktop/Truco-master/logo.png')
+imagem_entrar = pygame.image.load('entrar.png')
+imagem_entrar_clicado = pygame.image.load('entrar_clicado.png')
+imagem_logo = pygame.image.load('logo.png')
 
-imagem_1 = pygame.image.load('/home/moreira/Desktop/Truco-master/back_card.png')
+imagem_1 = pygame.image.load('back_card.png')
 imagem_1 = pygame.transform.rotate(imagem_1,25)
 
-imagem_2 = pygame.image.load('/home/moreira/Desktop/Truco-master/back_card.png')
+imagem_2 = pygame.image.load('back_card.png')
 imagem_2 = pygame.transform.rotate(imagem_2,335)
 
-imagem_diamonds = pygame.image.load('/home/moreira/Desktop/Truco-master/Diamonds.png')
-imagem_spades = pygame.image.load('/home/moreira/Desktop/Truco-master/Spades.png')
-imagem_hearts = pygame.image.load('/home/moreira/Desktop/Truco-master/Hearts.png')
-imagem_clubs = pygame.image.load('/home/moreira/Desktop/Truco-master/Clubs.png')
+imagem_diamonds = pygame.image.load('Diamonds.png')
+imagem_spades = pygame.image.load('Spades.png')
+imagem_hearts = pygame.image.load('Hearts.png')
+imagem_clubs = pygame.image.load('Clubs.png')
 
 
 		
 
-def entrar no jogo():
+#def entrar no jogo():
 	
 
 
