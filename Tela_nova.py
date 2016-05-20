@@ -448,6 +448,7 @@ def loop_de_jogo():
                 jogo.valor_partida=1
                 jogo.truco = False
                 inicio_da_partida = True
+
                 
                 
             
