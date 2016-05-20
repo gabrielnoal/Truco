@@ -193,6 +193,7 @@ def loop_de_jogo():
                 pass
 
         if inicio_da_partida == True:
+            jogo.reset()
             jogou_carta_1_1 = False
             jogou_carta_1_2 = False
             jogou_carta_1_3 = False
@@ -200,6 +201,8 @@ def loop_de_jogo():
             jogou_carta_3_1 = False
             jogou_carta_3_2 = False
             jogou_carta_3_3 = False
+            
+            apertou_ESPAÇO = False
             imagens_baralho = imagens_baralho_original[:]
             
             jogo.manilha()
@@ -215,6 +218,30 @@ def loop_de_jogo():
             carta_3_1 = imagens_baralho[jogo.carta_3_1]
             carta_3_2 = imagens_baralho[jogo.carta_3_2]
             carta_3_3 = imagens_baralho[jogo.carta_3_3]
+            
+            '''Posição manilha'''
+            posição_x_manilha = posição_x_baralho
+            posição_y_manilha = posição_y_baralho
+            '''Posiçoes das cartas do Jogador de baixo'''
+            posição_x_carta1_1 = posição_x_baralho
+            posição_y_carta1_1 = posição_y_baralho
+            
+            posição_x_carta1_2 = posição_x_baralho
+            posição_y_carta1_2 = posição_y_baralho
+    
+            posição_x_carta1_3 = posição_x_baralho
+            posição_y_carta1_3 = posição_y_baralho
+    
+            '''Posiçoes das cartas do Jogador de cima'''
+            posição_x_carta3_1 = posição_x_baralho
+            posição_y_carta3_1 = posição_y_baralho
+    
+            posição_x_carta3_2 = posição_x_baralho
+            posição_y_carta3_2 = posição_y_baralho
+    
+            posição_x_carta3_3 = posição_x_baralho
+            posição_y_carta3_3 = posição_y_baralho
+            
             inicio_da_partida = False
        
         for event in pygame.event.get():
@@ -226,7 +253,7 @@ def loop_de_jogo():
                 
                     
                 if event.key == pygame.K_SPACE:
-                        if apertou_ESPAÇO == False:                   
+                        if apertou_ESPAÇO == False:                  
                             posição_y_carta1_1 = tela_altura - altura_carta -50
                             posição_y_carta1_2 = posição_y_carta1_1 
                             posição_y_carta1_3 = posição_y_carta1_2 
@@ -242,7 +269,8 @@ def loop_de_jogo():
                             posição_x_carta3_1 -= largura_carta 
                             posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
                             posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
-                        
+                            
+                            
                             apertou_ESPAÇO = True
            
                 
@@ -391,6 +419,37 @@ def loop_de_jogo():
             
             if apertou_ESPAÇO == False:        
                 tela_truco.blit(costas_da_carta,[posição_x_baralho,posição_y_baralho])
+                
+            if jogo.ponto_rodada_jogador_0 >= 2:
+                print('Jogador 0 ganhou a rodada!')
+                print()
+                jogo.ponto_jogo_jogador_0 += jogo.valor_partida
+                print('Pontos na partida jogador 0:', jogo.ponto_jogo_jogador_0)
+                print('Pontos na partida jogador 1:', jogo.ponto_jogo_jogador_1)
+                jogo.rodada = 4
+                jogo.mao_jogador_0=[]
+                jogo.mao_jogador_1=[]
+                jogo.mesa=[]
+                jogo.ponto_rodada_jogador_0=0
+                jogo.ponto_rodada_jogador_1=0   
+                jogo.valor_partida=1
+                jogo.truco = False
+                inicio_da_partida = True
+                
+            if jogo.ponto_rodada_jogador_1 >= 2:
+                print('Jogador 1 ganhou a rodada!')
+                print()
+                jogo.ponto_jogo_jogador_1 += jogo.valor_partida
+                print('Pontos na partida jogador 1:',jogo.ponto_jogo_jogador_1)
+                print('Pontos na partida jogador 0:',jogo.ponto_jogo_jogador_0)
+                jogo.rodada = 4
+                jogo.ponto_rodada_jogador_0=0
+                jogo.ponto_rodada_jogador_1=0   
+                jogo.valor_partida=1
+                jogo.truco = False
+                inicio_da_partida = True
+                
+                
             
 
 #               tela_truco.fill(verde, rect= [(tela_largura/2)-largura_carta-40, (tela_altura/2)-50, largura_carta + 40, altura_carta + 50])
