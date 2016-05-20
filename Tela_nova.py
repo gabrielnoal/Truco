@@ -420,38 +420,36 @@ def loop_de_jogo():
             if apertou_ESPAÇO == False:        
                 tela_truco.blit(costas_da_carta,[posição_x_baralho,posição_y_baralho])
                 
-            if jogo.ponto_rodada_jogador_0 >= 2:
-                print('Jogador 0 ganhou a rodada!')
-                print()
-                jogo.ponto_jogo_jogador_0 += jogo.valor_partida
-                print('Pontos na partida jogador 0:', jogo.ponto_jogo_jogador_0)
-                print('Pontos na partida jogador 1:', jogo.ponto_jogo_jogador_1)
-                jogo.rodada = 4
-                jogo.mao_jogador_0=[]
-                jogo.mao_jogador_1=[]
-                jogo.mesa=[]
-                jogo.ponto_rodada_jogador_0=0
-                jogo.ponto_rodada_jogador_1=0   
-                jogo.valor_partida=1
-                jogo.truco = False
-                inicio_da_partida = True
+            if jogo.ponto_rodada_jogador_0 == 2:
+                if jogo.ponto_rodada_jogador_0 >= jogo.ponto_rodada_jogador_1:
+                    print('Jogador 0 ganhou a rodada!')
+                    print()
+                    jogo.ponto_jogo_jogador_0 += jogo.valor_partida
+                    print('Pontos na partida jogador 0:', jogo.ponto_jogo_jogador_0)
+                    print('Pontos na partida jogador 1:', jogo.ponto_jogo_jogador_1)
+                    jogo.rodada = 4
+                    jogo.mao_jogador_0=[]
+                    jogo.mao_jogador_1=[]
+                    jogo.mesa=[]
+                    jogo.ponto_rodada_jogador_0=0
+                    jogo.ponto_rodada_jogador_1=0   
+                    jogo.valor_partida=1
+                    jogo.truco = False
+                    inicio_da_partida = True
                 
-            if jogo.ponto_rodada_jogador_1 >= 2:
-                print('Jogador 1 ganhou a rodada!')
-                print()
-                jogo.ponto_jogo_jogador_1 += jogo.valor_partida
-                print('Pontos na partida jogador 1:',jogo.ponto_jogo_jogador_1)
-                print('Pontos na partida jogador 0:',jogo.ponto_jogo_jogador_0)
-                jogo.rodada = 4
-                jogo.ponto_rodada_jogador_0=0
-                jogo.ponto_rodada_jogador_1=0   
-                jogo.valor_partida=1
-                jogo.truco = False
-                inicio_da_partida = True
-
-                
-                
-            
+            if jogo.ponto_rodada_jogador_1 == 2 and jogo.ponto_rodada_jogador_0 != jogo.ponto_rodada_jogador_1 :
+                if jogo.ponto_rodada_jogador_1 > jogo.ponto_rodada_jogador_0:                
+                    print('Jogador 1 ganhou a rodada!')
+                    print()
+                    jogo.ponto_jogo_jogador_1 += jogo.valor_partida
+                    print('Pontos na partida jogador 1:',jogo.ponto_jogo_jogador_1)
+                    print('Pontos na partida jogador 0:',jogo.ponto_jogo_jogador_0)
+                    jogo.rodada = 4
+                    jogo.ponto_rodada_jogador_0=0
+                    jogo.ponto_rodada_jogador_1=0   
+                    jogo.valor_partida=1
+                    jogo.truco = False
+                    inicio_da_partida = True
 
 #               tela_truco.fill(verde, rect= [(tela_largura/2)-largura_carta-40, (tela_altura/2)-50, largura_carta + 40, altura_carta + 50])
 #                tela_truco.fill(verde, rect= [(tela_largura/2)+largura_carta+40, (tela_altura/2)-50, largura_carta +40, altura_carta + 50])
