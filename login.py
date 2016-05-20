@@ -1,6 +1,6 @@
 import pygame
 import time
-from TrucON import Logica
+from TrucOFF import Logica
 
 
 
@@ -19,24 +19,91 @@ tela_largura=800
 tela_altura=600
 
 tela_inicio = pygame.display.set_mode((tela_largura,tela_altura))
-pygame.display.set_caption('Truco')
+pygame.display.set_caption('TrucOFF')
 
 
-altura_carta = tela_altura/4 
-largura_carta = tela_altura/6
+imagem_entrar = pygame.image.load('entrar.png')
+imagem_entrar_clicado = pygame.image.load('entrar_clicado.png')
+imagem_logo = pygame.image.load('logo.png')
+
+imagem_1 = pygame.image.load('back_card.png')
+imagem_1 = pygame.transform.rotate(imagem_1,25)
+
+imagem_2 = pygame.image.load('back_card.png')
+imagem_2 = pygame.transform.rotate(imagem_2,335)
+
+imagem_diamonds = pygame.image.load('Diamonds.png')
+imagem_spades = pygame.image.load('Spades.png')
+imagem_hearts = pygame.image.load('Hearts.png')
+imagem_clubs = pygame.image.load('Clubs.png')
 
 
-imagem_entrar = pygame.image.load('/home/moreira/Desktop/Truco-master/entrar.png')
+		
+
+#def entrar no jogo():
+	
+
+
+
+
+def botao():
+	tela_inicio.blit(imagem_entrar, [285,500])
+	mouse_pos = pygame.mouse.get_pos()
+	mouse_click = pygame.mouse.get_pressed()
+	if (475 > mouse_pos[0] > 300):
+		if (560 > mouse_pos[1] > 500):
+			if mouse_click[0] == 1:
+				tela_inicio.fill(verde)
+				tela_inicio.blit(imagem_1, [0,25])
+				tela_inicio.blit(imagem_2, [600,25])
+				tela_inicio.blit(imagem_diamonds, [200,350])
+				tela_inicio.blit(imagem_spades, [310,350])
+				tela_inicio.blit(imagem_hearts, [420,350])
+				tela_inicio.blit(imagem_clubs, [530,350])
+				tela_inicio.blit(imagem_logo, [150,200])
+				tela_inicio.blit(imagem_entrar_clicado, [285,500])
+				print('você entrou no jogo')
+
+
+
+
+
 
 gameLoop = True
 while gameLoop:
+
+	
 	for  event in pygame.event.get():
 
-		if (event.type==pygame.QUIT):
+
+
+
+		tela_inicio.fill(verde)
+		tela_inicio.blit(imagem_1, [0,25])
+		tela_inicio.blit(imagem_2, [600,25])
+		tela_inicio.blit(imagem_diamonds, [200,350])
+		tela_inicio.blit(imagem_spades, [310,350])
+		tela_inicio.blit(imagem_hearts, [420,350])
+		tela_inicio.blit(imagem_clubs, [530,350])
+		tela_inicio.blit(imagem_logo, [150,200])
 		
+		botao()
+
+
+
+
+
+
+
+
+		
+		if (event.type==pygame.QUIT):
+					
 			gameLoop = False
-	tela_inicio.fill(verde)
-	tela_inicio.blit(imagem_entrar, [200,300])
+
+
+
+
 	pygame.display.update()
 
 
