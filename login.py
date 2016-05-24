@@ -50,6 +50,7 @@ def botao():
 	tela_inicio.blit(imagem_entrar, [285,500])
 	mouse_pos = pygame.mouse.get_pos()
 	mouse_click = pygame.mouse.get_pressed()
+
 	if (475 > mouse_pos[0] > 300):
 		if (560 > mouse_pos[1] > 500):
 			if mouse_click[0] == 1:
