@@ -41,56 +41,56 @@ class Logica:
     def manilha(self):
         self.vira = random.randint(0,39)
         self.vira_carta=self.baralho[self.vira]
-        self.a = self.vira_carta.split('_')
-        self.b = self.a[1]
+        a = self.vira_carta.split('_')
+        b = self.a[1]
         #SE a vira for 3 fiz esse código para não dar erro
         if self.vira in [36,37,38,39]:
-            self.pika = self.baralho[0]
-            self.espadilha = self.baralho[1]
-            self.copa = self.baralho[2]
-            self.zap = self.baralho[3]
+            pika= self.baralho[0]
+            espadilha = self.baralho[1]
+            copas = self.baralho[2]
+            zap = self.baralho[3]
             
             print("A vira é o: {0}".format(self.baralho[self.vira]))
             self.baralho[self.vira] = "-1"
-            self.dic_baralho[self.pika]=11
-            self.dic_baralho[self.espadilha]=12
-            self.dic_baralho[self.copa]=13
-            self.dic_baralho[self.zap]=14
+            self.dic_baralho[pika]=11
+            self.dic_baralho[espadilha]=12
+            self.dic_baralho[copas ]=13
+            self.dic_baralho[zap]=14
 #            print(self.baralho)            
             return
             
             
         else:
-            if self.b == 'ouros':
-                self.pika = self.baralho[self.vira+4]
-                self.espadilha = self.baralho[self.vira+5]
-                self.copa = self.baralho[self.vira+6]
-                self.zap = self.baralho[self.vira+7]
+            if b == 'ouros':
+                pika = self.baralho[self.vira+4]
+                espadilha = self.baralho[self.vira+5]
+                copas = self.baralho[self.vira+6]
+                zap = self.baralho[self.vira+7]
                     
-            if self.b == 'espadas':
-                self.pika = self.baralho[self.vira+3]
-                self.espadilha = self.baralho[self.vira+4]
-                self.copa = self.baralho[self.vira+5]
-                self.zap = self.baralho[self.vira+6]
+            if b == 'espadas':
+                pika = self.baralho[self.vira+3]
+                espadilha = self.baralho[self.vira+4]
+                copas = self.baralho[self.vira+5]
+                zap = self.baralho[self.vira+6]
                                 
-            if self.b == 'copas':
-                self.pika = self.baralho[self.vira+2]
-                self.espadilha = self.baralho[self.vira+3]
-                self.copa = self.baralho[self.vira+4]
-                self.zap = self.baralho[self.vira+5]
+            if b == 'copas':
+                pika = self.baralho[self.vira+2]
+                espadilha = self.baralho[self.vira+3]
+                copas = self.baralho[self.vira+4]
+                zap = self.baralho[self.vira+5]
             
-            if self.b == 'paus':
-                self.pika = self.baralho[self.vira+1]
-                self.espadilha = self.baralho[self.vira+2]
-                self.copa = self.baralho[self.vira+3]
-                self.zap = self.baralho[self.vira+4]
+            if b == 'paus':
+                pika = self.baralho[self.vira+1]
+                espadilha = self.baralho[self.vira+2]
+                copas = self.baralho[self.vira+3]
+                zap = self.baralho[self.vira+4]
                    
             print("A vira é o: {0}".format(self.baralho[self.vira]))
             self.baralho[self.vira] = "-1"
-            self.dic_baralho[self.pika]=11
-            self.dic_baralho[self.espadilha]=12
-            self.dic_baralho[self.copa]=13
-            self.dic_baralho[self.zap]=14
+            self.dic_baralho[pika]=11
+            self.dic_baralho[espadilha]=12
+            self.dic_baralho[copas ]=13
+            self.dic_baralho[zap]=14
 #            print(self.baralho)            
             return
             
