@@ -356,12 +356,7 @@ class Logica:
         elif self.jogador == 1:
             self.ponto_jogador_0 += self.valor_partida
             print(self.ponto_jogador_0,self.ponto_jogador_1)
-            
-    def quem_pediu_truco(self):
-        if self.jogador == 0:
-             return 0  # Jogador 0 pediu truco 
-        elif self.jogador == 1 : 
-             return 1 # Jogdaor 1 pediu truco
+
              
     def reset(self):
         self.mao_jogador_0=[]
@@ -417,71 +412,3 @@ class Logica:
         self.valor_partida = 12
      
 
-    def gameloop(self):
-        self.fim_jogo = False
-
-        self.manilha()
-        self.distribuir_cartas()
-
-        
-        self.joga_carta()
-        self.joga_carta()          
-        self.verifica_ganhador()
-        self.limpa_jogadas()
-        self.verifica_ganhador_partida()       
-        print(self.ponto_rodada_jogador_0)
-        print(self.ponto_rodada_jogador_1)
-        self.fim_rodada()
-       
-        
-
-        self.joga_carta()
-        self.joga_carta()        
-        self.verifica_ganhador()
-        self.limpa_jogadas()
-        self.verifica_ganhador_partida()
-        print(self.ponto_rodada_jogador_0)
-        print(self.ponto_rodada_jogador_1)
-        self.fim_rodada()
-
-        print(self.mao_jogador_0,self.mao_jogador_1)
-        self.joga_carta()
-        self.joga_carta()        
-        self.pedir_truco()
-        self.verifica_ganhador()
-        self.limpa_jogadas()
-        self.verifica_ganhador_partida()
-        self.fim_rodada()
-    
-
-
-#jogo=Logica()
-#jogo.gameloop()
-
-
-#print(jogo.distribuir_cartas())
-#
-#
-#print(jogo.joga_carta())
-#print(jogo.joga_carta())
-#print(jogo.verifica_ganhador())
-#print(jogo.ponto_rodada_jogador_0)
-#print(jogo.ponto_rodada_jogador_1)
-#
-#print(jogo.mao_jogador_0,jogo.mao_jogador_1)
-#print(jogo.joga_carta())
-#print(jogo.joga_carta())
-#print(jogo.verifica_ganhador())
-#print(jogo.ponto_rodada_jogador_0)
-#print(jogo.ponto_rodada_jogador_1)
-#
-#
-#print(jogo.mao_jogador_0,jogo.mao_jogador_1)
-#print(jogo.joga_carta())
-#print(jogo.joga_carta())
-#print(jogo.verifica_ganhador())
-#print(jogo.ponto_rodada_jogador_0)
-#print(jogo.ponto_rodada_jogador_1)
-#
-#
-#print(jogo.placar())
