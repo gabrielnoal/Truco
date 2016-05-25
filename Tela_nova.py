@@ -32,6 +32,22 @@ pygame.display.set_caption('Truco')
 altura_carta = tela_altura/4 
 largura_carta = tela_altura/6
 
+imagem_entrar = pygame.image.load('entrar.png')
+imagem_entrar_clicado = pygame.image.load('entrar_clicado.png')
+imagem_logo = pygame.image.load('logo.png')
+
+imagem_1 = pygame.image.load('back_card.png')
+imagem_1 = pygame.transform.rotate(imagem_1,25)
+
+imagem_2 = pygame.image.load('back_card.png')
+imagem_2 = pygame.transform.rotate(imagem_2,335)
+
+imagem_diamonds = pygame.image.load('Diamonds.png')
+imagem_spades = pygame.image.load('Spades.png')
+imagem_hearts = pygame.image.load('Hearts.png')
+imagem_clubs = pygame.image.load('Clubs.png')
+
+
 botao_truco_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Truco.png")
 botao_truco_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Truco_clicado.png")
 
@@ -196,14 +212,63 @@ posição_botao_correr_0 = [(posição_botao_truco_0[0] + 145), posição_botao_
 posição_botao_correr_1 = [(posição_botao_truco_1[0] - 145), posição_botao_truco_1[1]]
 
 lixo = -500
-        
+
+
+smallfont = pygame.font.SysFont("comicsansms", 25)
+medfont = pygame.font.SysFont("comicsansms", 50)
+largefont = pygame.font.SysFont("comicsansms", 80)
+
+score_0 = ("Score: {0}".format(jogo.ponto_jogo_jogador_0))
+score_1 = ("Score: {0}".format(jogo.ponto_jogo_jogador_1))
+
+def botao_inicio():
+	tela_truco.blit(imagem_entrar, [285,500])
+	mouse_pos = pygame.mouse.get_pos()
+	mouse_click = pygame.mouse.get_pressed()
+
+	if (475 > mouse_pos[0] > 300):
+		if (560 > mouse_pos[1] > 500):
+			if mouse_click[0] == 1:
+				tela_truco.fill(verde)
+				tela_truco.blit(imagem_1, [0,25])
+				tela_truco.blit(imagem_2, [600,25])
+				tela_truco.blit(imagem_diamonds, [200,350])
+				tela_truco.blit(imagem_spades, [310,350])
+				tela_truco.blit(imagem_hearts, [420,350])
+				tela_truco.blit(imagem_clubs, [530,350])
+				tela_truco.blit(imagem_logo, [150,200])
+				tela_truco.blit(imagem_entrar_clicado, [285,500])
+				return True
+
+def text_objects(text,color,size):
+    if size =="small":
+        textSurface = smallfont.render(text, True, color)
+    elif size =="medium":
+        textSurface = medfont.render(text, True, color)
+    if size =="large":
+        textSurface = largefont.render(text, True, color)
+    return textSurface, textSurface.get_rect()
+
+def score_to_screen_0(score,color, x, y, y_displace=0, size= "small"):
+    textSurf, textRect = text_objects(score,color,size)
+    textRect.center= x, y + y_displace
+    tela_truco.blit(textSurf, textRect)
+    
+    
+def score_to_screen_1(score,color, x, y, y_displace=0, size= "small"):
+    textSurf, textRect = text_objects(score,color,size)
+    textRect.center= x, y + y_displace
+    textSurf = pygame.transform.rotate(textSurf, 180)
+    tela_truco.blit(textSurf, textRect)
     
 def loop_de_jogo():
     fim_do_app = False
     fim_do_jogo= False
     apertou_ESPAÇO = False
     inicio_da_partida = True
-        
+    jogador_que_começa = 0    
+    inicio = True
+    
         
 
     '''Posição manilha'''
@@ -229,6 +294,18 @@ def loop_de_jogo():
     posição_x_carta3_3 = posição_x_baralho
     posição_y_carta3_3 = posição_y_baralho
     while not fim_do_app:
+#        while inicio == True:
+#            tela_truco.fill(verde)
+#            tela_truco.blit(imagem_1, [0,25])
+#            tela_truco.blit(imagem_2, [600,25])
+#            tela_truco.blit(imagem_diamonds, [200,350])
+#            tela_truco.blit(imagem_spades, [310,350])
+#            tela_truco.blit(imagem_hearts, [420,350])
+#            tela_truco.blit(imagem_clubs, [530,350])
+#            tela_truco.blit(imagem_logo, [150,200])
+#            if botao_inicio() == True:
+#                inicio = False
+            
         if jogo.ponto_jogo_jogador_0 >= 12 or jogo.ponto_jogo_jogador_1 >= 12:
             fim_do_jogo = True
             while fim_do_jogo == True:
@@ -236,6 +313,7 @@ def loop_de_jogo():
 
         if inicio_da_partida == True:
             jogo.reset()
+            jogo.jogador = jogador_que_começa
             jogou_carta_1_1 = False
             jogou_carta_1_2 = False
             jogou_carta_1_3 = False
@@ -287,7 +365,7 @@ def loop_de_jogo():
             inicio_da_partida = False
        
         for event in pygame.event.get():
-            print (event)
+#            print (event)
             
             if event.type == pygame.QUIT:
                     fim_do_app = True
@@ -384,6 +462,9 @@ def loop_de_jogo():
                             jogo.troca_jogador()
                             print(jogo .mesa)
                             jogou_carta_3_3 = True
+                            
+                            
+
                                 
                                 
             if len(jogo.mesa)==2:
@@ -439,12 +520,14 @@ def loop_de_jogo():
                         
                 elif jogo.jogador == 1:
                     # Verifica se o jogador 1 ja jogou a carta, se não jogou blit a carta para ele ver
-                    if jogo.mao_jogador_1[0] != -1:
-                        tela_truco.blit(carta_3_1, [posição_x_carta3_1,posição_y_carta3_1])
+                    if jogo.mao_jogador_1[2] != -1:                    
+                        tela_truco.blit(carta_3_3, [posição_x_carta3_3,posição_y_carta3_3])                    
                     if jogo.mao_jogador_1[1] != -1:
                         tela_truco.blit(carta_3_2, [posição_x_carta3_2,posição_y_carta3_2])
-                    if jogo.mao_jogador_1[2] != -1:                    
-                        tela_truco.blit(carta_3_3, [posição_x_carta3_3,posição_y_carta3_3])
+
+                    if jogo.mao_jogador_1[0] != -1:
+                        tela_truco.blit(carta_3_1, [posição_x_carta3_1,posição_y_carta3_1])
+                    
                         
     
                     if jogo.mao_jogador_0[0] != -1:
@@ -473,7 +556,7 @@ def loop_de_jogo():
             if apertou_ESPAÇO == False:        
                 tela_truco.blit(costas_da_carta,[posição_x_baralho,posição_y_baralho])
                 
-            if jogo.ponto_rodada_jogador_0 == 2:
+            if jogo.ponto_rodada_jogador_0 >= 2:
                 if jogo.ponto_rodada_jogador_0 >= jogo.ponto_rodada_jogador_1:
                     print('Jogador 0 ganhou a rodada!')
                     print()
@@ -489,8 +572,12 @@ def loop_de_jogo():
                     jogo.valor_partida=1
                     jogo.truco = False
                     inicio_da_partida = True
+                    if jogador_que_começa == 0:
+                        jogador_que_começa = 1
+                    elif jogador_que_começa == 1:
+                        jogador_que_começa = 0
                 
-            if jogo.ponto_rodada_jogador_1 == 2 and jogo.ponto_rodada_jogador_0 != jogo.ponto_rodada_jogador_1 :
+            if jogo.ponto_rodada_jogador_1 >= 2 and jogo.ponto_rodada_jogador_0 != jogo.ponto_rodada_jogador_1 :
                 if jogo.ponto_rodada_jogador_1 > jogo.ponto_rodada_jogador_0:                
                     print('Jogador 1 ganhou a rodada!')
                     print()
@@ -503,13 +590,15 @@ def loop_de_jogo():
                     jogo.valor_partida=1
                     jogo.truco = False
                     inicio_da_partida = True
+                    if jogador_que_começa == 0:
+                        jogador_que_começa = 1
+                    elif jogador_que_começa == 1:
+                        jogador_que_começa = 0
 
-#               tela_truco.fill(verde, rect= [(tela_largura/2)-largura_carta-40, (tela_altura/2)-50, largura_carta + 40, altura_carta + 50])
-#                tela_truco.fill(verde, rect= [(tela_largura/2)+largura_carta+40, (tela_altura/2)-50, largura_carta +40, altura_carta + 50])
-#                pygame.display.update()
-                
-#                tela_truco.fill(verde, rect= [(tela_largura/2)-largura_carta-40, (tela_altura/2)-50, largura_carta + 40, altura_carta + 50])
-#               tela_truco.fill(verde, rect= [(tela_largura/2)+largura_carta+40, (tela_altura/2)-50, largura_carta +40, altura_carta + 50])
+            score_to_screen_0(score_0, preto, (tela_largura - 100), (tela_altura- 75), y_displace=0, size= "small")
+            score_to_screen_1(score_1, preto, (tela_largura - 100), (75), y_displace=0, size= "small")        
+
+
             pygame.display.update()
                         
             
