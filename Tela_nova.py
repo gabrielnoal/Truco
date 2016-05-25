@@ -221,6 +221,8 @@ largefont = pygame.font.SysFont("comicsansms", 80)
 score_0 = ("Score: {0}".format(jogo.ponto_jogo_jogador_0))
 score_1 = ("Score: {0}".format(jogo.ponto_jogo_jogador_1))
 
+apertou_o_botao = False
+
 def botao_inicio():
 	tela_truco.blit(imagem_entrar, [285,500])
 	mouse_pos = pygame.mouse.get_pos()
@@ -238,7 +240,7 @@ def botao_inicio():
 				tela_truco.blit(imagem_clubs, [530,350])
 				tela_truco.blit(imagem_logo, [150,200])
 				tela_truco.blit(imagem_entrar_clicado, [285,500])
-				return True
+				apertou_o_botao =True
 
 def text_objects(text,color,size):
     if size =="small":
@@ -294,17 +296,19 @@ def loop_de_jogo():
     posição_x_carta3_3 = posição_x_baralho
     posição_y_carta3_3 = posição_y_baralho
     while not fim_do_app:
-#        while inicio == True:
-#            tela_truco.fill(verde)
-#            tela_truco.blit(imagem_1, [0,25])
-#            tela_truco.blit(imagem_2, [600,25])
-#            tela_truco.blit(imagem_diamonds, [200,350])
-#            tela_truco.blit(imagem_spades, [310,350])
-#            tela_truco.blit(imagem_hearts, [420,350])
-#            tela_truco.blit(imagem_clubs, [530,350])
-#            tela_truco.blit(imagem_logo, [150,200])
-#            if botao_inicio() == True:
-#                inicio = False
+        while inicio == True:
+            tela_truco.fill(verde)
+            tela_truco.blit(imagem_1, [0,25])
+            tela_truco.blit(imagem_2, [600,25])
+            tela_truco.blit(imagem_diamonds, [200,350])
+            tela_truco.blit(imagem_spades, [310,350])
+            tela_truco.blit(imagem_hearts, [420,350])
+            tela_truco.blit(imagem_clubs, [530,350])
+            tela_truco.blit(imagem_logo, [150,200])
+            botao_inicio()
+            pygame.display.update()    
+            if apertou_o_botao == True:
+                inicio = False
             
         if jogo.ponto_jogo_jogador_0 >= 12 or jogo.ponto_jogo_jogador_1 >= 12:
             fim_do_jogo = True
