@@ -225,11 +225,11 @@ class Logica:
                     return
                 elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
-                    self.ponto_rodada_jogador_0+=1
-                    self.ponto_rodada_jogador_1+=1
+                    self.ponto_rodada_jogador_0 =1
+                    self.ponto_rodada_jogador_1 =1
                     self.rodada += 1    
 
-            if self.rodada == 2:
+            elif self.rodada == 2:
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_0+=1
                     self.rodada = 3
@@ -245,7 +245,7 @@ class Logica:
                     self.ponto_rodada_jogador_1+=1
                     self.rodada = 3 
 
-            if self.rodada == 3:
+            elif self.rodada == 3:
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_0+=1
                     self.rodada+=1
@@ -262,7 +262,7 @@ class Logica:
                     self.rodada += 1   
 
 
-        if self.jogador == 1: 
+        elif self.jogador == 1: 
             if self.rodada==1:
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_1+=1
@@ -275,11 +275,11 @@ class Logica:
                     return
                 elif self.dic_baralho[self.mesa[0]] == self.dic_baralho[self.mesa[1]]:
                     self.troca_jogador()
-                    self.ponto_rodada_jogador_1+=1
-                    self.ponto_rodada_jogador_0+=1
+                    self.ponto_rodada_jogador_1 =1
+                    self.ponto_rodada_jogador_0 =1
                     self.rodada += 1   
 
-            if self.rodada == 2:
+            elif self.rodada == 2:
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_1+=1
                     self.rodada+=1
@@ -295,7 +295,7 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.rodada += 1
 
-            if self.rodada == 3:
+            elif self.rodada == 3:
                 if self.dic_baralho[self.mesa[0]]>self.dic_baralho[self.mesa[1]]: 
                     self.ponto_rodada_jogador_1+=1
                     self.rodada+=1
@@ -311,8 +311,7 @@ class Logica:
                     self.ponto_rodada_jogador_0+=1
                     self.rodada += 1
 
-
-
+        
     def fim_rodada(self):
 
         if self.ponto_rodada_jogador_0 >= 2:
