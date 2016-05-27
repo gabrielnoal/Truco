@@ -349,13 +349,13 @@ class Logica:
 
     def correr_truco(self):
         if self.jogador == 0:
-            self.ponto_jogador_1 += self.valor_partida          
-            print(self.ponto_jogador_0,self.ponto_jogador_1)
+            self.ponto_jogo_jogador_1 += self.valor_partida          
+            print(self.ponto_jogo_jogador_0, self.ponto_jogo_jogador_1)
             
             
         elif self.jogador == 1:
-            self.ponto_jogador_0 += self.valor_partida
-            print(self.ponto_jogador_0,self.ponto_jogador_1)
+            self.ponto_jogo_jogador_0 += self.valor_partida
+            print(self.ponto_jogo_jogador_0,self.ponto_jogo_jogador_1)
 
              
     def reset(self):
