@@ -42,7 +42,7 @@ class Logica:
         self.vira = random.randint(0,39)
         self.vira_carta=self.baralho[self.vira]
         a = self.vira_carta.split('_')
-        b = self.a[1]
+        b = a[1]
         #SE a vira for 3 fiz esse código para não dar erro
         if self.vira in [36,37,38,39]:
             pika= self.baralho[0]
