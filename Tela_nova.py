@@ -69,8 +69,8 @@ botao_nove_1_clicado = pygame.transform.rotate(botao_nove_0_clicado, 180)
 botao_doze_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Doze.png")
 botao_doze_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Doze_clicado.png")
 
-botao_nove_1 = pygame.transform.rotate(botao_doze_0, 180)
-botao_nove_1_clicado = pygame.transform.rotate(botao_doze_0_clicado, 180)
+botao_doze_1 = pygame.transform.rotate(botao_doze_0, 180)
+botao_doze_1_clicado = pygame.transform.rotate(botao_doze_0_clicado, 180)
 
 botao_cair_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Cair.png")
 botao_cair_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Cair_clicado.png")
@@ -221,8 +221,8 @@ smallfont = pygame.font.SysFont("comicsansms", 25)
 medfont = pygame.font.SysFont("comicsansms", 50)
 largefont = pygame.font.SysFont("comicsansms", 80)
 
-score_0 = ("Score: {0}".format(jogo.ponto_jogo_jogador_0))
-score_1 = ("Score: {0}".format(jogo.ponto_jogo_jogador_1))
+score_0 = "Score: {0}".format(jogo.ponto_jogo_jogador_0)
+score_1 = "Score: {0}".format(jogo.ponto_jogo_jogador_1)
 
 jogador_0_pediu_truco = False
 jogador_1_pediu_truco = False
@@ -247,7 +247,7 @@ def botao_inicio():
 				tela_truco.blit(imagem_entrar_clicado, [285,500])
 				return True
     
-def funcao_botao_truco_0():
+def funcao_truco_0():
     tela_truco.blit(botao_truco_0, [posição_botao_truco_0[0], posição_botao_truco_0[1]])
     mouse_pos = pygame.mouse.get_pos()
     mouse_click = pygame.mouse.get_pressed()
@@ -258,9 +258,9 @@ def funcao_botao_truco_0():
                 tela_truco.blit(botao_truco_0_clicado, [posição_botao_truco_0[0], posição_botao_truco_0[1]])
                 pygame.display.update()
                 jogo.troca_jogador()
-                jogador_0_pediu_truco = True
+                return True
             
-def funcao_botao_truco_1():
+def funcao_truco_1():
     tela_truco.blit(botao_truco_1, [posição_botao_truco_1[0], posição_botao_truco_1[1]])
     mouse_pos = pygame.mouse.get_pos()
     mouse_click = pygame.mouse.get_pressed()
@@ -271,7 +271,7 @@ def funcao_botao_truco_1():
                 tela_truco.blit(botao_truco_1_clicado, [posição_botao_truco_1[0], posição_botao_truco_1[1]])
                 pygame.display.update()
                 jogo.troca_jogador()
-                jogador_1_pediu_truco = True
+                return True
             
 def funcao_cair_0():
     tela_truco.blit(botao_cair_0, [posição_botao_truco_0[0], posição_botao_truco_0[1]])
@@ -281,8 +281,17 @@ def funcao_cair_0():
         if (posição_botao_truco_0[1] < mouse_pos[1] < posição_botao_truco_0[1] + altura_botao):
             if mouse_click[0] == 1:
                 tela_truco.blit(botao_cair_0_clicado, [posição_botao_truco_0[0], posição_botao_truco_0[1]])
-                jogo.cair_truco()
-                jogo.troca_jogador()
+                return True
+                
+def funcao_cair_1():
+    tela_truco.blit(botao_cair_1, [posição_botao_truco_1[0], posição_botao_truco_1[1]])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_truco_1[0] < mouse_pos[0] < posição_botao_truco_1[0] + largura_botao):
+        if (posição_botao_truco_1[1] < mouse_pos[1] < posição_botao_truco_1[1] + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_cair_1_clicado, [posição_botao_truco_1[0], posição_botao_truco_1[1]])
+                return True              
                                 
 def funcao_correr_0():
     tela_truco.blit(botao_correr_0, [posição_botao_correr_0[0],posição_botao_correr_0[1]])
@@ -292,8 +301,83 @@ def funcao_correr_0():
         if (posição_botao_correr_0[1] < mouse_pos[1] < posição_botao_correr_0[1] + altura_botao):
             if mouse_click[0] == 1:
                 tela_truco.blit(botao_correr_0_clicado, [posição_botao_correr_0[0], posição_botao_correr_0[1]])
-                jogo.ponto_rodada_jogador_1 += 4
+                return True
+
+def funcao_correr_1():
+    tela_truco.blit(botao_correr_1, [posição_botao_correr_1[0],posição_botao_correr_1[1]])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_1[0] < mouse_pos[0] < posição_botao_correr_1[0] + largura_botao):
+        if (posição_botao_correr_1[1] < mouse_pos[1] < posição_botao_correr_1[1] + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_correr_1_clicado, [posição_botao_correr_1[0], posição_botao_correr_1[1]])
+                return True
                 
+def funcao_seis_1():
+    tela_truco.blit(botao_seis_1, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_1[0] < mouse_pos[0] < posição_botao_correr_1[0] + largura_botao):
+        if (posição_botao_correr_1[1] + 75 < mouse_pos[1] < posição_botao_correr_1[1] + 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_seis_1_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+                jogo.troca_jogador()
+                return True
+                
+def funcao_seis_0():
+    tela_truco.blit(botao_seis_0, [posição_botao_correr_0[0],posição_botao_correr_0[1] - 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_0[0] < mouse_pos[0] < posição_botao_correr_0[0] + largura_botao):
+        if (posição_botao_correr_0[1] - 75 < mouse_pos[1] < posição_botao_correr_0[1] - 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_seis_0_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] - 75])
+                jogo.troca_jogador()
+                return True
+                
+def funcao_nove_1():
+    tela_truco.blit(botao_nove_1, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_1[0] < mouse_pos[0] < posição_botao_correr_1[0] + largura_botao):
+        if (posição_botao_correr_1[1] + 75 < mouse_pos[1] < posição_botao_correr_1[1] + 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_nove_1_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+                jogo.troca_jogador()
+                return True
+                
+def funcao_nove_0():
+    tela_truco.blit(botao_nove_0, [posição_botao_correr_0[0],posição_botao_correr_0[1] - 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_0[0] < mouse_pos[0] < posição_botao_correr_0[0] + largura_botao):
+        if (posição_botao_correr_0[1] - 75 < mouse_pos[1] < posição_botao_correr_0[1] - 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_nove_0_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] - 75])
+                jogo.troca_jogador()
+                return True
+                
+def funcao_doze_1():
+    tela_truco.blit(botao_doze_1, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_1[0] < mouse_pos[0] < posição_botao_correr_1[0] + largura_botao):
+        if (posição_botao_correr_1[1] + 75 < mouse_pos[1] < posição_botao_correr_1[1] + 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_doze_1_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] + 75])
+                jogo.troca_jogador()
+                return True
+                
+def funcao_doze_0():
+    tela_truco.blit(botao_doze_0, [posição_botao_correr_0[0],posição_botao_correr_0[1] - 75])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    if (posição_botao_correr_0[0] < mouse_pos[0] < posição_botao_correr_0[0] + largura_botao):
+        if (posição_botao_correr_0[1] - 75 < mouse_pos[1] < posição_botao_correr_0[1] - 75 + altura_botao):
+            if mouse_click[0] == 1:
+                tela_truco.blit(botao_doze_0_clicado, [posição_botao_correr_1[0],posição_botao_correr_1[1] - 75])
+                jogo.troca_jogador()
+                return True
 
         
                 
@@ -392,6 +476,20 @@ def loop_de_jogo():
             jogador_0_pediu_truco = False
             jogador_1_pediu_truco = False
             
+            jogador_0_pediu_seis = False            
+            jogador_1_pediu_seis = False
+            
+            jogador_0_pediu_nove = False            
+            jogador_1_pediu_nove = False            
+
+            jogador_0_pediu_doze = False            
+            jogador_1_pediu_doze = False
+            
+            cartas_0_bloqueadas = True
+            cartas_1_bloqueadas = True
+            
+            
+            
             apertou_ESPAÇO = False
             imagens_baralho = imagens_baralho_original[:]
             
@@ -460,79 +558,81 @@ def loop_de_jogo():
                             posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
                             posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
                             
+                            cartas_0_bloqueadas = False
+                            cartas_1_bloqueadas = False
                             
                             apertou_ESPAÇO = True
                     
-                
-                if jogo.jogador == 0:            
-                    if event.key == pygame.K_1:
-                        if jogou_carta_1_1 ==False:
-                            posição_y_carta1_1= posição_mesa_direita[1]
-                            posição_x_carta1_1= posição_mesa_direita[0]
-                            jogo.mesa.append(jogo.mao_jogador_0[0])
-                            jogo.mao_jogador_0[0]=-1
-                            jogo.troca_jogador()
-                            print(jogo.mesa)
-                            jogou_carta_1_1 = True
-                            pygame.display.update()
-                            
+                if cartas_0_bloqueadas == False:
+                    if jogo.jogador == 0:            
+                        if event.key == pygame.K_1:
+                            if jogou_carta_1_1 ==False:
+                                posição_y_carta1_1= posição_mesa_direita[1]
+                                posição_x_carta1_1= posição_mesa_direita[0]
+                                jogo.mesa.append(jogo.mao_jogador_0[0])
+                                jogo.mao_jogador_0[0]=-1
+                                jogo.troca_jogador()
+                                print(jogo.mesa)
+                                jogou_carta_1_1 = True
+                                pygame.display.update()
                                 
-                    if event.key == pygame.K_2:
-                        if jogou_carta_1_2 == False:                    
-                            posição_y_carta1_2= posição_mesa_direita[1]
-                            posição_x_carta1_2= posição_mesa_direita[0]
-                            jogo.mesa.append(jogo.mao_jogador_0[1])
-                            jogo.mao_jogador_0[1]=-1
-                            jogo.troca_jogador()
-                            print(jogo.mesa)
-                            jogou_carta_1_2 = True
-                            pygame.display.update()
-
+                                    
+                        if event.key == pygame.K_2:
+                            if jogou_carta_1_2 == False:                    
+                                posição_y_carta1_2= posição_mesa_direita[1]
+                                posição_x_carta1_2= posição_mesa_direita[0]
+                                jogo.mesa.append(jogo.mao_jogador_0[1])
+                                jogo.mao_jogador_0[1]=-1
+                                jogo.troca_jogador()
+                                print(jogo.mesa)
+                                jogou_carta_1_2 = True
+                                pygame.display.update()
     
-                    if event.key == pygame.K_3:
-                        if jogou_carta_1_3 == False:                    
-                            posição_y_carta1_3= posição_mesa_direita[1]
-                            posição_x_carta1_3= posição_mesa_direita[0]
-                            jogo.mesa.append(jogo.mao_jogador_0[2])
-                            jogo.mao_jogador_0[2]=-1
-                            jogo.troca_jogador()
-                            print(jogo.mesa)
-                            jogou_carta_1_3 = True
-                            pygame.display.update()
-                            
-                            
-                elif jogo.jogador == 1:
-                    if event.key == pygame.K_4:
-                        if jogou_carta_3_1 == False:
-                            posição_y_carta3_1= posição_mesa_esquerda[1]
-                            posição_x_carta3_1= posição_mesa_esquerda[0]
-                            jogo.mesa.append(jogo.mao_jogador_1[0])
-                            jogo.mao_jogador_1[0]=-1
-                            jogo.troca_jogador()
-                            print(jogo.mesa)
-                            jogou_carta_3_1 = True
+        
+                        if event.key == pygame.K_3:
+                            if jogou_carta_1_3 == False:                    
+                                posição_y_carta1_3= posição_mesa_direita[1]
+                                posição_x_carta1_3= posição_mesa_direita[0]
+                                jogo.mesa.append(jogo.mao_jogador_0[2])
+                                jogo.mao_jogador_0[2]=-1
+                                jogo.troca_jogador()
+                                print(jogo.mesa)
+                                jogou_carta_1_3 = True
+                                pygame.display.update()
+                                
+                if cartas_1_bloqueadas == False:                
+                    if jogo.jogador == 1:
+                        if event.key == pygame.K_4:
+                            if jogou_carta_3_1 == False:
+                                posição_y_carta3_1= posição_mesa_esquerda[1]
+                                posição_x_carta3_1= posição_mesa_esquerda[0]
+                                jogo.mesa.append(jogo.mao_jogador_1[0])
+                                jogo.mao_jogador_1[0]=-1
+                                jogo.troca_jogador()
+                                print(jogo.mesa)
+                                jogou_carta_3_1 = True
+        
+                        if event.key == pygame.K_5:
+                            if jogou_carta_3_2 == False:
+                                posição_y_carta3_2= posição_mesa_esquerda[1]
+                                posição_x_carta3_2= posição_mesa_esquerda[0]
+                                jogo.mesa.append(jogo.mao_jogador_1[1])
+                                jogo.mao_jogador_1[1]=-1
+                                jogo.troca_jogador()
+                                print(jogo.mesa)
+                                jogou_carta_3_2 = True
     
-                    if event.key == pygame.K_5:
-                        if jogou_carta_3_2 == False:
-                            posição_y_carta3_2= posição_mesa_esquerda[1]
-                            posição_x_carta3_2= posição_mesa_esquerda[0]
-                            jogo.mesa.append(jogo.mao_jogador_1[1])
-                            jogo.mao_jogador_1[1]=-1
-                            jogo.troca_jogador()
-                            print(jogo.mesa)
-                            jogou_carta_3_2 = True
-
-
-                    if event.key == pygame.K_6:
-                        if jogou_carta_3_3 == False:
-                            posição_y_carta3_3= posição_mesa_esquerda[1]
-                            posição_x_carta3_3= posição_mesa_esquerda[0]
-                            jogo.mesa.append(jogo.mao_jogador_1[2])
-                            jogo.mao_jogador_1[2]=-1
-                            jogo.troca_jogador()
-                            print(jogo .mesa)
-                            jogou_carta_3_3 = True
-                            
+    
+                        if event.key == pygame.K_6:
+                            if jogou_carta_3_3 == False:
+                                posição_y_carta3_3= posição_mesa_esquerda[1]
+                                posição_x_carta3_3= posição_mesa_esquerda[0]
+                                jogo.mesa.append(jogo.mao_jogador_1[2])
+                                jogo.mao_jogador_1[2]=-1
+                                jogo.troca_jogador()
+                                print(jogo .mesa)
+                                jogou_carta_3_3 = True
+                                
                             
 
                                 
@@ -584,15 +684,78 @@ def loop_de_jogo():
                         
                     
                     if jogo.valor_partida == 1:
-                        if jogador_1_pediu_truco == True:
-                            funcao_correr_0()
-                            funcao_cair_0()
-                            pygame.display.update()
+                        if funcao_truco_0() == True:
+                            jogador_0_pediu_truco = True
+                            
+                        elif funcao_correr_0() == True:
+                            jogo.correr_truco()
 
                             
-                        else:
-                            funcao_correr_0()
-                            funcao_botao_truco_0()
+                        if jogador_1_pediu_truco == True:
+                            cartas_0_bloqueadas = True
+                            if funcao_cair_0() == True:
+                                jogo.cair_truco()
+                                cartas_0_bloqueadas = False
+                            elif funcao_correr_0() == True:
+                                jogo.correr_truco()
+                                cartas_0_bloqueadas = False
+                            elif funcao_seis_0() == True:
+                                jogo.valor_partida = 3
+                                jogador_0_pediu_seis = True
+
+                    elif jogo.valor_partida == 3 and jogo.jogador == 0:
+                        if funcao_correr_0() == True:
+                            jogo.correr_truco()
+                            
+                        if jogador_1_pediu_truco == True:
+                            if funcao_seis_0() == True:
+                                jogador_0_pediu_seis = True
+                                
+                        if jogador_1_pediu_seis == True:
+                            cartas_0_bloqueadas = True
+                            if funcao_cair_0() == True:
+                                jogo.cair_seis()
+                                cartas_0_bloqueadas = False
+                            elif funcao_correr_0() == True:
+                                jogo.correr_truco()
+                                cartas_0_bloqueadas = False
+                            elif funcao_nove_0() == True:
+                                jogo.valor_partida = 6
+                                jogador_0_pediu_nove = True
+                                
+                    elif jogo.valor_partida == 6 and jogo.jogador == 0:
+                        if funcao_correr_0() == True:
+                            jogo.correr_truco()
+                            
+                        if jogador_1_pediu_nove == True:
+                            cartas_0_bloqueadas = True
+                            if funcao_cair_0() == True:
+                                jogo.cair_nove()
+                                cartas_0_bloqueadas = False
+                            elif funcao_correr_0() == True:
+                                jogo.correr_truco()
+                                cartas_0_bloqueadas = False
+                            elif funcao_doze_0() == True:
+                                jogo.valor_partida = 9
+                                jogador_0_pediu_doze = True
+                                
+                    elif jogo.valor_partida == 9 and jogo.jogador == 0:
+                        if funcao_correr_0() == True:
+                            jogo.correr_truco()
+                        
+                        if jogador_1_pediu_doze == True:
+                            cartas_0_bloqueadas = True
+                            if funcao_cair_0() == True:
+                                jogo.cair_doze()
+                                cartas_0_bloqueadas = False
+                            elif funcao_correr_0() == True:
+                                jogo.correr_truco()
+                                cartas_0_bloqueadas = False
+                        
+                                               
+                    pygame.display.update()
+
+                            
                         
                             
                        
@@ -624,10 +787,76 @@ def loop_de_jogo():
                         tela_truco.blit(carta_1_3, [posição_x_carta1_3,posição_y_carta1_3])
                         
                     if jogo.valor_partida == 1:
-                        funcao_botao_truco_1()
+                        if funcao_truco_1() == True:
+                            jogador_1_pediu_truco = True
+                            
+                        elif funcao_correr_1() == True:
+                            jogo.correr_truco()
+
+                            
+                        if jogador_0_pediu_truco == True:
+                            cartas_1_bloqueadas = True
+                            if funcao_cair_1() == True:
+                                jogo.cair_truco()
+                                cartas_1_bloqueadas = False
+                            elif funcao_correr_1() == True:
+                                jogo.correr_truco()
+                                cartas_1_bloqueadas = False
+                            elif funcao_seis_1() == True:
+                                jogo.valor_partida = 3
+                                jogador_1_pediu_seis = True
+
+                    elif jogo.valor_partida == 3 and jogo.jogador == 1:
+                        if funcao_correr_1() == True:
+                            jogo.correr_truco()
+                            
+                        if jogador_0_pediu_truco == True:
+                            if funcao_seis_1() == True:
+                                jogador_1_pediu_seis = True
+                                
+                        if jogador_0_pediu_seis == True:
+                            cartas_1_bloqueadas = True
+                            if funcao_cair_1() == True:
+                                jogo.cair_seis()
+                                cartas_1_bloqueadas = False
+                            elif funcao_correr_1() == True:
+                                jogo.correr_truco()
+                                cartas_1_bloqueadas = False
+                            elif funcao_nove_1() == True:
+                                jogo.valor_partida = 6
+                                jogador_1_pediu_nove = True
+                                
+                    elif jogo.valor_partida == 6 and jogo.jogador == 1:
+                        if funcao_correr_1() == True:
+                            jogo.correr_truco()
+                            
+                        if jogador_0_pediu_nove == True:
+                            cartas_1_bloqueadas = True
+                            if funcao_cair_1() == True:
+                                jogo.cair_nove()
+                                cartas_1_bloqueadas = False
+                            elif funcao_correr_1() == True:
+                                jogo.correr_truco()
+                                cartas_1_bloqueadas = False
+                            elif funcao_doze_1() == True:
+                                jogo.valor_partida = 9
+                                jogador_1_pediu_doze = True
+                                
+                    elif jogo.valor_partida == 9 and jogo.jogador == 1:
+                        if funcao_correr_1() == True:
+                            jogo.correr_truco()
                         
-                    
-                
+                        if jogador_0_pediu_doze == True:
+                            cartas_1_bloqueadas = True
+                            if funcao_cair_1() == True:
+                                jogo.cair_doze()
+                                cartas_1_bloqueadas = False
+                            elif funcao_correr_1() == True:
+                                jogo.correr_truco()
+                                cartas_1_bloqueadas = False
+                            
+                    pygame.display.update()
+
 
             
             if apertou_ESPAÇO == False:        
@@ -672,8 +901,8 @@ def loop_de_jogo():
                     elif jogador_que_começa == 1:
                         jogador_que_começa = 0
 
-            messege_to_screen_0(score_0, preto, (tela_largura - 100), (tela_altura- 75), y_displace=0, size= "small")
-            messege_to_screen_1(score_1, preto, (tela_largura - 100), (75), y_displace=0, size= "small")        
+            messege_to_screen_0("Score: {0}".format(jogo.ponto_jogo_jogador_0) , preto, (tela_largura - 100), (tela_altura- 75), y_displace=0, size= "small")
+            messege_to_screen_1("Score: {0}".format(jogo.ponto_jogo_jogador_1) , preto, (tela_largura - 100), (75), y_displace=0, size= "small")        
 
 
             pygame.display.update()
