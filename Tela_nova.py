@@ -471,6 +471,11 @@ def loop_de_jogo():
             while fim_do_jogo == True:
                 tela_truco.fill(preto)
                 messege_to_screen_0("Fim de Jogo", branco, tela_largura//2, tela_altura//2, y_displace=0, size= "large")
+                
+                if jogo.ponto_jogo_jogador_0 > jogo.ponto_jogo_jogador_1:
+                    messege_to_screen_0("O jogador de baixo ganhou",branco, tela_largura//2, tela_altura//2, y_displace=200, size= "medium")
+                else:
+                    messege_to_screen_0("O jogador de cima ganhou",branco, tela_largura//2, tela_altura//2, y_displace=200, size= "medium")
                 pygame.display.update()
                 
                 for event in pygame.event.get():
