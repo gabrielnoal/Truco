@@ -564,31 +564,31 @@ def loop_de_jogo():
     
             if event.type == pygame.QUIT:
                     fim_do_app = True
-            if event.type == pygame.KEYDOWN:
+            
                 
                     
-                if event.key == pygame.K_SPACE:
-                        if apertou_ESPAÇO == False:                  
-                            posição_y_carta1_1 = tela_altura - altura_carta -50
-                            posição_y_carta1_2 = posição_y_carta1_1 
-                            posição_y_carta1_3 = posição_y_carta1_2 
-    
-                            posição_y_carta3_1=0
-                            posição_y_carta3_2=0
-                            posição_y_carta3_3=0
-                            
-                            posição_x_carta1_1 -= largura_carta 
-                            posição_x_carta1_2 = posição_x_carta1_1 + largura_carta + 20
-                            posição_x_carta1_3 = posição_x_carta1_2 + largura_carta + 20
-                            
-                            posição_x_carta3_1 -= largura_carta 
-                            posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
-                            posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
-                            
-                            cartas_0_bloqueadas = False
-                            cartas_1_bloqueadas = False
-                            
-                            apertou_ESPAÇO = True
+            if clicou_carta(posição_x_baralho, posição_y_baralho):
+                    if apertou_ESPAÇO == False:                  
+                        posição_y_carta1_1 = tela_altura - altura_carta -50
+                        posição_y_carta1_2 = posição_y_carta1_1 
+                        posição_y_carta1_3 = posição_y_carta1_2 
+
+                        posição_y_carta3_1=0
+                        posição_y_carta3_2=0
+                        posição_y_carta3_3=0
+                        
+                        posição_x_carta1_1 -= largura_carta 
+                        posição_x_carta1_2 = posição_x_carta1_1 + largura_carta + 20
+                        posição_x_carta1_3 = posição_x_carta1_2 + largura_carta + 20
+                        
+                        posição_x_carta3_1 -= largura_carta 
+                        posição_x_carta3_2 = posição_x_carta3_1 + largura_carta + 20
+                        posição_x_carta3_3 = posição_x_carta3_2 + largura_carta + 20
+                        
+                        cartas_0_bloqueadas = False
+                        cartas_1_bloqueadas = False
+                        
+                        apertou_ESPAÇO = True
                             
             if cartas_0_bloqueadas == False:
                 if jogo.jogador == 0:            
