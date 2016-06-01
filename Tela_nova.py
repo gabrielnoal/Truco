@@ -672,7 +672,20 @@ def loop_de_jogo():
                             jogo.troca_jogador()
                             print(jogo.mesa)
                             jogou_carta_3_2 = True
-                          
+
+
+                    if clicou_carta(posição_x_carta3_3, posição_y_carta3_3) == True:
+                        if jogou_carta_3_3 == False:
+                            posição_y_carta3_3= posição_mesa_esquerda[1]
+                            posição_x_carta3_3= posição_mesa_esquerda[0]
+                            jogo.mesa.append(jogo.mao_jogador_1[2])
+                            jogo.mao_jogador_1[2]=-1
+                            jogo.troca_jogador()
+                            print(jogo .mesa)
+                            jogou_carta_3_3 = True   
+                            
+                        
+
                                 
                                 
             if len(jogo.mesa)==2:
