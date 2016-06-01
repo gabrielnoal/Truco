@@ -511,7 +511,7 @@ def loop_de_jogo():
             
             mão_de_11 = False
             
-            if jogo.ponto_jogo_jogador_0 == 11 or jogo.ponto_jogo_jogador_1 == 1:
+            if jogo.ponto_jogo_jogador_0 == 11 or jogo.ponto_jogo_jogador_1 == 11:
                 jogo.valor_partida = 3
                 mão_de_11 = True
             
@@ -788,7 +788,7 @@ def loop_de_jogo():
                         if verifica_botao_truco_0() == True:
                             jogador_0_pediu_truco = True
                             
-                        elif verifica_botao_correr_0() == True:
+                        if verifica_botao_correr_0() == True:
                             jogo.correr_truco()
 
                             
@@ -909,7 +909,7 @@ def loop_de_jogo():
                         if verifica_botao_truco_1() == True:
                             jogador_1_pediu_truco = True
                             
-                        elif verifica_botao_correr_1() == True:
+                        if verifica_botao_correr_1() == True:
                             jogo.correr_truco()
 
                             
