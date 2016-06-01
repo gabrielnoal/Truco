@@ -87,96 +87,96 @@ botao_correr_1_clicado = pygame.transform.rotate(botao_correr_0_clicado, 180)
 costas_da_carta = pygame.image.load("back_card.png")
 costas_da_carta = pygame.transform.scale(costas_da_carta, (int(largura_carta),int(altura_carta)))
 
-As_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/01_of_clubs.png")
+As_paus = pygame.image.load("01_of_clubs.png")
 As_paus =pygame.transform.scale(As_paus, (int(largura_carta),int(altura_carta)))
-As_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/01_of_diamonds.png")
+As_ouros = pygame.image.load("01_of_diamonds.png")
 As_ouros =pygame.transform.scale(As_ouros, (int(largura_carta),int(altura_carta)))
-As_copas     = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/01_of_hearts.png")
+As_copas     = pygame.image.load("01_of_hearts.png")
 As_copas = pygame.transform.scale(As_copas, (int(largura_carta),int(altura_carta)))
-As_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/01_of_spades.png")
+As_espadas = pygame.image.load("01_of_spades.png")
 As_espadas = pygame.transform.scale(As_espadas, (int(largura_carta),int(altura_carta)))
 
-Dois_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/02_of_clubs.png")
+Dois_paus = pygame.image.load("02_of_clubs.png")
 Dois_paus = pygame.transform.scale(Dois_paus, (int(largura_carta),int(altura_carta)))
-Dois_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/02_of_diamonds.png")
+Dois_ouros = pygame.image.load("02_of_diamonds.png")
 Dois_ouros = pygame.transform.scale(Dois_ouros, (int(largura_carta),int(altura_carta)))
-Dois_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/02_of_hearts.png")
+Dois_copas = pygame.image.load("02_of_hearts.png")
 Dois_copas = pygame.transform.scale(Dois_copas, (int(largura_carta),int(altura_carta)))
-Dois_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/02_of_spades.png")
+Dois_espadas = pygame.image.load("02_of_spades.png")
 Dois_espadas = pygame.transform.scale(Dois_espadas, (int(largura_carta),int(altura_carta)))
 
 
-Tres_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/03_of_clubs.png")
+Tres_paus = pygame.image.load("03_of_clubs.png")
 Tres_paus = pygame.transform.scale(Tres_paus, (int(largura_carta),int(altura_carta)))
-Tres_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/03_of_diamonds.png")
+Tres_ouros = pygame.image.load("03_of_diamonds.png")
 Tres_ouros = pygame.transform.scale(Tres_ouros, (int(largura_carta),int(altura_carta)))
-Tres_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/03_of_hearts.png")
+Tres_copas = pygame.image.load("03_of_hearts.png")
 Tres_copas = pygame.transform.scale(Tres_copas, (int(largura_carta),int(altura_carta)))
-Tres_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/03_of_spades.png")
+Tres_espadas = pygame.image.load("03_of_spades.png")
 Tres_espadas = pygame.transform.scale(Tres_espadas, (int(largura_carta),int(altura_carta)))
 
 
-Quatro_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/04_of_clubs.png")
+Quatro_paus = pygame.image.load("04_of_clubs.png")
 Quatro_paus = pygame.transform.scale(Quatro_paus, (int(largura_carta),int(altura_carta)))
-Quatro_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/04_of_diamonds.png")
+Quatro_ouros = pygame.image.load("04_of_diamonds.png")
 Quatro_ouros = pygame.transform.scale(Quatro_ouros, (int(largura_carta),int(altura_carta)))
-Quatro_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/04_of_hearts.png")
+Quatro_copas = pygame.image.load("04_of_hearts.png")
 Quatro_copas = pygame.transform.scale(Quatro_copas, (int(largura_carta),int(altura_carta)))
-Quatro_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/04_of_spades.png")
+Quatro_espadas = pygame.image.load("04_of_spades.png")
 Quatro_espadas = pygame.transform.scale(Quatro_espadas, (int(largura_carta),int(altura_carta)))
 
-Cinco_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/05_of_clubs.png")
+Cinco_paus = pygame.image.load("05_of_clubs.png")
 Cinco_paus = pygame.transform.scale(Cinco_paus, (int(largura_carta),int(altura_carta)))
-Cinco_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/05_of_diamonds.png")
+Cinco_ouros = pygame.image.load("05_of_diamonds.png")
 Cinco_ouros = pygame.transform.scale(Cinco_ouros, (int(largura_carta),int(altura_carta)))
-Cinco_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/05_of_hearts.png")
+Cinco_copas = pygame.image.load("05_of_hearts.png")
 Cinco_copas = pygame.transform.scale(Cinco_copas, (int(largura_carta),int(altura_carta)))
-Cinco_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/05_of_spades.png")
+Cinco_espadas = pygame.image.load("05_of_spades.png")
 Cinco_espadas = pygame.transform.scale(Cinco_espadas, (int(largura_carta),int(altura_carta)))
 
-Seis_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/06_of_clubs.png")
+Seis_paus = pygame.image.load("06_of_clubs.png")
 Seis_paus = pygame.transform.scale(Seis_paus, (int(largura_carta),int(altura_carta)))
-Seis_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/06_of_diamonds.png")
+Seis_ouros = pygame.image.load("06_of_diamonds.png")
 Seis_ouros = pygame.transform.scale(Seis_ouros, (int(largura_carta),int(altura_carta)))
-Seis_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/06_of_hearts.png")
+Seis_copas = pygame.image.load("06_of_hearts.png")
 Seis_copas = pygame.transform.scale(Seis_copas, (int(largura_carta),int(altura_carta)))
-Seis_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/06_of_spades.png")    
+Seis_espadas = pygame.image.load("06_of_spades.png")    
 Seis_espadas = pygame.transform.scale(Seis_espadas, (int(largura_carta),int(altura_carta)))
 
-Sete_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/07_of_clubs.png")
+Sete_paus = pygame.image.load("07_of_clubs.png")
 Sete_paus = pygame.transform.scale(Sete_paus, (int(largura_carta),int(altura_carta)))
-Sete_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/07_of_diamonds.png")
+Sete_ouros = pygame.image.load("07_of_diamonds.png")
 Sete_ouros = pygame.transform.scale(Sete_ouros, (int(largura_carta),int(altura_carta)))
-Sete_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/07_of_hearts.png")
+Sete_copas = pygame.image.load("07_of_hearts.png")
 Sete_copas = pygame.transform.scale(Sete_copas, (int(largura_carta),int(altura_carta)))
-Sete_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/07_of_spades.png")    
+Sete_espadas = pygame.image.load("07_of_spades.png")    
 Sete_espadas = pygame.transform.scale(Sete_espadas, (int(largura_carta),int(altura_carta)))
 
-Valete_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Jack_of_clubs_en.png")
+Valete_paus = pygame.image.load("Jack_of_clubs_en.png")
 Valete_paus = pygame.transform.scale(Valete_paus, (int(largura_carta),int(altura_carta)))
-Valete_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Jack_of_diamonds_en.png")
+Valete_ouros = pygame.image.load("Jack_of_diamonds_en.png")
 Valete_ouros = pygame.transform.scale(Valete_ouros, (int(largura_carta),int(altura_carta)))
-Valete_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Jack_of_hearts_en.png")
+Valete_copas = pygame.image.load("Jack_of_hearts_en.png")
 Valete_copas = pygame.transform.scale(Valete_copas, (int(largura_carta),int(altura_carta)))
-Valete_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Jack_of_spades_en.png")
+Valete_espadas = pygame.image.load("Jack_of_spades_en.png")
 Valete_espadas = pygame.transform.scale(Valete_espadas, (int(largura_carta),int(altura_carta)))
 
-Dama_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_clubs_en.png")
+Dama_paus = pygame.image.load("Queen_of_clubs_en.png")
 Dama_paus = pygame.transform.scale(Dama_paus, (int(largura_carta),int(altura_carta)))
-Dama_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_diamonds_en.png")
+Dama_ouros = pygame.image.load("Queen_of_diamonds_en.png")
 Dama_ouros = pygame.transform.scale(Dama_ouros, (int(largura_carta),int(altura_carta)))
-Dama_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_hearts_en.png")
+Dama_copas = pygame.image.load("Queen_of_hearts_en.png")
 Dama_copas = pygame.transform.scale(Dama_copas, (int(largura_carta),int(altura_carta)))
-Dama_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/Queen_of_spades_en.png")
+Dama_espadas = pygame.image.load("Queen_of_spades_en.png")
 Dama_espadas = pygame.transform.scale(Dama_espadas, (int(largura_carta),int(altura_carta)))
 
-Rei_paus = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_clubs_en.png")
+Rei_paus = pygame.image.load("King_of_clubs_en.png")
 Rei_paus = pygame.transform.scale(Rei_paus, (int(largura_carta),int(altura_carta)))
-Rei_ouros = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_diamonds_en.png")
+Rei_ouros = pygame.image.load("King_of_diamonds_en.png")
 Rei_ouros = pygame.transform.scale(Rei_ouros, (int(largura_carta),int(altura_carta)))
-Rei_copas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_diamonds_en.png")
+Rei_copas = pygame.image.load("King_of_diamonds_en.png")
 Rei_copas = pygame.transform.scale(Rei_copas, (int(largura_carta),int(altura_carta)))
-Rei_espadas = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Imagens Baralho/King_of_spades_en.png")
+Rei_espadas = pygame.image.load("King_of_spades_en.png")
 Rei_espadas = pygame.transform.scale(Rei_espadas, (int(largura_carta),int(altura_carta)))
 
 imagens_baralho_original=[Quatro_ouros, Quatro_espadas, Quatro_copas, Quatro_paus,
@@ -413,6 +413,7 @@ def clicou_carta(posição_x_carta, posição_y_carta):
                 
                 
 def loop_de_jogo():
+    tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
     fim_do_app = False
     fim_do_jogo= False
     apertou_ESPAÇO = False
@@ -451,6 +452,14 @@ def loop_de_jogo():
             
                 if event.type == pygame.QUIT:
                     pygame.quit()
+                    
+                if event.type == pygame.KEYDOWN:
+                    
+                    if event.key == pygame.K_F5:
+                        tela_truco = pygame.display.set_mode((tela_largura, tela_altura), pygame.FULLSCREEN)
+                        
+                    if event.key == pygame.K_ESCAPE:
+                        tela_truco = pygame.display.set_mode((tela_largura, tela_altura))
                         
                         
             tela_truco.fill(verde)
@@ -481,7 +490,16 @@ def loop_de_jogo():
                 for event in pygame.event.get():
                     if event.type == pygame.QUIT:
                         pygame.quit()
-
+                        
+                        
+                    if event.type == pygame.KEYDOWN:
+                    
+                        if event.key == pygame.K_F5:
+                            tela_truco = pygame.display.set_mode((tela_largura, tela_altura),pygame.FULLSCREEN)
+                        
+                        if event.key == pygame.K_ESCAPE:
+                            tela_truco = pygame.display.set_mode((tela_largura, tela_altura))
+                            
         if inicio_da_partida == True:
             jogo.reset()
             
@@ -564,8 +582,14 @@ def loop_de_jogo():
     
             if event.type == pygame.QUIT:
                     fim_do_app = True
-            
-                
+                    
+            if event.type == pygame.KEYDOWN:
+                    
+                if event.key == pygame.K_F5:
+                    tela_truco = pygame.display.set_mode((tela_largura, tela_altura), pygame.FULLSCREEN)
+                        
+                if event.key == pygame.K_ESCAPE:
+                    tela_truco = pygame.display.set_mode((tela_largura, tela_altura))                
                     
             if clicou_carta(posição_x_baralho, posição_y_baralho):
                     if apertou_ESPAÇO == False:                  
