@@ -48,38 +48,38 @@ imagem_hearts = pygame.image.load('Hearts.png')
 imagem_clubs = pygame.image.load('Clubs.png')
 
 
-botao_truco_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Truco.png")
-botao_truco_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Truco_clicado.png")
+botao_truco_0 = pygame.image.load("Truco.png")
+botao_truco_0_clicado = pygame.image.load("Truco_clicado.png")
 
 botao_truco_1 = pygame.transform.rotate(botao_truco_0, 180)
 botao_truco_1_clicado = pygame.transform.rotate(botao_truco_0_clicado, 180)
 
-botao_seis_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Seis.png")
-botao_seis_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Seis_clicado.png")
+botao_seis_0 = pygame.image.load("Seis.png")
+botao_seis_0_clicado = pygame.image.load("Seis_clicado.png")
 
 botao_seis_1 = pygame.transform.rotate(botao_seis_0, 180)
 botao_seis_1_clicado = pygame.transform.rotate(botao_seis_0_clicado, 180)
 
-botao_nove_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Nove.png")
-botao_nove_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Nove_clicado.png")
+botao_nove_0 = pygame.image.load("Nove.png")
+botao_nove_0_clicado = pygame.image.load("Nove_clicado.png")
 
 botao_nove_1 = pygame.transform.rotate(botao_nove_0, 180)
 botao_nove_1_clicado = pygame.transform.rotate(botao_nove_0_clicado, 180)
 
-botao_doze_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Doze.png")
-botao_doze_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Doze_clicado.png")
+botao_doze_0 = pygame.image.load("Doze.png")
+botao_doze_0_clicado = pygame.image.load("Doze_clicado.png")
 
 botao_doze_1 = pygame.transform.rotate(botao_doze_0, 180)
 botao_doze_1_clicado = pygame.transform.rotate(botao_doze_0_clicado, 180)
 
-botao_cair_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Cair.png")
-botao_cair_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Cair_clicado.png")
+botao_cair_0 = pygame.image.load("Cair.png")
+botao_cair_0_clicado = pygame.image.load("Cair_clicado.png")
 
 botao_cair_1 = pygame.transform.rotate(botao_cair_0, 180)
 botao_cair_1_clicado = pygame.transform.rotate(botao_cair_0_clicado, 180)
 
-botao_correr_0 = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Correr.png")
-botao_correr_0_clicado = pygame.image.load("C:/Users/Usuario/Documents/GitHub/Truco/Correr_clicado.png")
+botao_correr_0 = pygame.image.load("Correr.png")
+botao_correr_0_clicado = pygame.image.load("Correr_clicado.png")
 
 botao_correr_1 = pygame.transform.rotate(botao_correr_0, 180)
 botao_correr_1_clicado = pygame.transform.rotate(botao_correr_0_clicado, 180)
@@ -672,89 +672,7 @@ def loop_de_jogo():
                             jogo.troca_jogador()
                             print(jogo.mesa)
                             jogou_carta_3_2 = True
-
-
-                    if clicou_carta(posição_x_carta3_3, posição_y_carta3_3) == True:
-                        if jogou_carta_3_3 == False:
-                            posição_y_carta3_3= posição_mesa_esquerda[1]
-                            posição_x_carta3_3= posição_mesa_esquerda[0]
-                            jogo.mesa.append(jogo.mao_jogador_1[2])
-                            jogo.mao_jogador_1[2]=-1
-                            jogo.troca_jogador()
-                            print(jogo .mesa)
-                            jogou_carta_3_3 = True   
-#                if cartas_0_bloqueadas == False:
-#                    if jogo.jogador == 0:            
-#                        if event.key == pygame.K_1:
-#                            if jogou_carta_1_1 ==False:
-#                                posição_y_carta1_1= posição_mesa_direita[1]
-#                                posição_x_carta1_1= posição_mesa_direita[0]
-#                                jogo.mesa.append(jogo.mao_jogador_0[0])
-#                                jogo.mao_jogador_0[0]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo.mesa)
-#                                jogou_carta_1_1 = True
-#                                pygame.display.update()
-#                                
-#                                    
-#                        if event.key == pygame.K_2:
-#                            if jogou_carta_1_2 == False:                    
-#                                posição_y_carta1_2= posição_mesa_direita[1]
-#                                posição_x_carta1_2= posição_mesa_direita[0]
-#                                jogo.mesa.append(jogo.mao_jogador_0[1])
-#                                jogo.mao_jogador_0[1]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo.mesa)
-#                                jogou_carta_1_2 = True
-#                                pygame.display.update()
-#    
-#        
-#                        if event.key == pygame.K_3:
-#                            if jogou_carta_1_3 == False:                    
-#                                posição_y_carta1_3= posição_mesa_direita[1]
-#                                posição_x_carta1_3= posição_mesa_direita[0]
-#                                jogo.mesa.append(jogo.mao_jogador_0[2])
-#                                jogo.mao_jogador_0[2]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo.mesa)
-#                                jogou_carta_1_3 = True
-#                                pygame.display.update()
-#                                
-#                if cartas_1_bloqueadas == False:                
-#                    if jogo.jogador == 1:
-#                        if event.key == pygame.K_4:
-#                            if jogou_carta_3_1 == False:
-#                                posição_y_carta3_1= posição_mesa_esquerda[1]
-#                                posição_x_carta3_1= posição_mesa_esquerda[0]
-#                                jogo.mesa.append(jogo.mao_jogador_1[0])
-#                                jogo.mao_jogador_1[0]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo.mesa)
-#                                jogou_carta_3_1 = True
-#        
-#                        if event.key == pygame.K_5:
-#                            if jogou_carta_3_2 == False:
-#                                posição_y_carta3_2= posição_mesa_esquerda[1]
-#                                posição_x_carta3_2= posição_mesa_esquerda[0]
-#                                jogo.mesa.append(jogo.mao_jogador_1[1])
-#                                jogo.mao_jogador_1[1]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo.mesa)
-#                                jogou_carta_3_2 = True
-#    
-#    
-#                        if event.key == pygame.K_6:
-#                            if jogou_carta_3_3 == False:
-#                                posição_y_carta3_3= posição_mesa_esquerda[1]
-#                                posição_x_carta3_3= posição_mesa_esquerda[0]
-#                                jogo.mesa.append(jogo.mao_jogador_1[2])
-#                                jogo.mao_jogador_1[2]=-1
-#                                jogo.troca_jogador()
-#                                print(jogo .mesa)
-#                                jogou_carta_3_3 = True
-                            
-                        
-
+                          
                                 
                                 
             if len(jogo.mesa)==2:
