@@ -1,0 +1,26 @@
+Manual do Usuário
+
+O jogo de truco criado é muito simples e funciona da seguinte forma:o jogo roda no próprio computador e será jogado por 2 pessoas.Para
+iniciá-lo é só clicar no botão jogar da tela de início. Assim, mostrará simplesmente um baralho "de costas", ou seja, sem mostrar nenhuma
+carta. Ao clicar nele, o jogo se iniciará e um dos jogadores verá suas 3 cartas, podendo, ao clicar nas próprias cartas, escolher qual 
+delas jogar. Além disso, como o jogo normal, este jogador pode pedir truco clicando no botão ao lado das cartas do mesmo. Desse modo, a 
+resposta do outro jogador pode ser aceitar o truco, pedir 6, ou simplesmente não aceitar clicando nos botões ao lado das cartas seguinte 
+este mesmo mecanismo. Portanto, o jogo tornou-se muito auto-explicativo após as alterações finais que seriam esses botões na própria tela
+de jogo.
+
+Manual de Truco:
+  O jogo de Truco é muito conhecido no meio universitário em geral. Por assim dizer, suas regras são muito questionáveis em alguns aspectos.
+Entretanto, vou ressaltar as que escolhemos como críterio:
+  O jogo se baseia em realizar 12 pontos antes que o adversário. Para isso, cada ponto será disputado, e para ganhá-lo o jogador deve 
+ganhar 2 das 3 rodadas. Entretanto, caso um dos jogadores peça truco e o outro aceite, o ponto passa a valer 3. Caso o jogador que rece-
+beu o pedido queira pedir 6 e o outro aceitar, o ponto passará a valer 6 pontos, e assim até 9 e 12.
+  O jogo possui todas as cartas do baralho a não ser os números 8,9 e 10. A ordem, ou seja, em ordem crescente de "força" seria 4,5,6,7,dama,
+valete,rei,as,dois,tres. Está seria a ordem do jogo, ou seja, se eu jogar um 4 e você um 5, você fez a rodada. Entretanto, há algo chamado
+"Manilha", ou seja, cada jogador recebe 3 cartas, e uma das cartas do baralho será mostrada. Desse modo, a carta sucessora mostrada.Por
+exemplo se virouo 3, sua sucessora é o 4. Caso isso aconteça, o 4 ganha um valor no jogo, sendo capaz de ganhar de todas as outras cartas 
+do jogo. No entanto, mesmo o 4 possui diferentes "hierarquias", pois existem 4 tipos de cartas para cada carta: ouros, espadas, copas e paus.
+Seguinte a ordem respectivamente também crescente. Seguindo o exemplo, se eu tiver um 4 de copas contra um 4 paus, o copas perde. 
+  Observações importantes: Caso alguém jogue uma carta com o mesmo valor da outra, ocorre um empate, e quem realizou este último torna-
+rá. Caso o jogo empate na última rodada, o jogador que fez a 1°rodada vence. Caso a 1°rodada empate, o jogador que fizer a 2°rodada ganha
+o ponto.
+  
