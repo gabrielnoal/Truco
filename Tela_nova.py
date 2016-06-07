@@ -32,6 +32,11 @@ pygame.display.set_caption('Truco')
 altura_carta = tela_altura/4 
 largura_carta = tela_altura/6
 
+botao_recomecar = pygame.image.load('Recomecar.png')
+
+botao_sair = pygame.image.load('Sair.png')
+
+
 imagem_entrar = pygame.image.load('entrar.png')
 imagem_entrar_clicado = pygame.image.load('entrar_clicado.png')
 imagem_logo = pygame.image.load('logo.png')
@@ -411,6 +416,27 @@ def clicou_carta(posição_x_carta, posição_y_carta):
             if mouse_click[0] == 1:
                 return True
                 
+def verifica_botao_recomecar(x,y):
+    tela_truco.blit(botao_recomecar, [x,y])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    
+    if (x < mouse_pos[0] < x + largura_botao):
+        if (y < mouse_pos[1] < y + altura_botao):
+            if mouse_click[0] == 1:
+                pygame.display.update()
+                return True
+
+def verifica_botao_sair(x,y):
+    tela_truco.blit(botao_sair, [x,y])
+    mouse_pos = pygame.mouse.get_pos()
+    mouse_click = pygame.mouse.get_pressed()
+    
+    if (x < mouse_pos[0] < x + largura_botao):
+        if (y < mouse_pos[1] < y + altura_botao):
+            if mouse_click[0] == 1:
+                pygame.display.update()
+                return True                
                 
 def loop_de_jogo():
     tela_truco = pygame.display.set_mode((tela_largura,tela_altura))
@@ -474,34 +500,67 @@ def loop_de_jogo():
             pygame.display.update()
             if botao_inicio() == True:
                 inicio = False
-            
+                mensagem_aparece = True
+                
+        while mensagem_aparece == True:
+            tela_truco.fill(verde)
+            messege_to_screen_0("Como jogar",preto, tela_largura//2,tela_altura//2, y_displace=-200, size="large")
+            messege_to_screen_0("Para iniciar as rodadas",vermelho, tela_largura//2,tela_altura//2,y_displace=-100, size="medium")
+            messege_to_screen_0("clique no baralho do meio,",vermelho, tela_largura//2,tela_altura//2, size="medium")
+            messege_to_screen_0("e para jogar a carta basta",vermelho, tela_largura//2,tela_altura//2, y_displace=100, size="medium")
+            messege_to_screen_0("clicar nela.",vermelho, tela_largura//2,tela_altura//2, y_displace=200, size="medium")
+            pygame.display.update()
+            time.sleep(6)            
+            mensagem_aparece = False
+        
         if jogo.ponto_jogo_jogador_0 >= 12 or jogo.ponto_jogo_jogador_1 >= 12:
             fim_do_jogo = True
-            while fim_do_jogo == True:
-                tela_truco.fill(preto)
-                messege_to_screen_0("Fim de Jogo", branco, tela_largura//2, tela_altura//2, y_displace=0, size= "large")
-                
-                if jogo.ponto_jogo_jogador_0 > jogo.ponto_jogo_jogador_1:
-                    messege_to_screen_0("O jogador de baixo ganhou",branco, tela_largura//2, tela_altura//2, y_displace=200, size= "medium")
-                else:
-                    messege_to_screen_0("O jogador de cima ganhou",branco, tela_largura//2, tela_altura//2, y_displace=200, size= "medium")
-                pygame.display.update()
-                
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        pygame.quit()
-                        
-                        
-                    if event.type == pygame.KEYDOWN:
+            
+        while fim_do_jogo == True:
+            tela_truco.fill(preto)
+            messege_to_screen_0("Fim de Jogo", branco, tela_largura//2, tela_altura//2, y_displace=-200, size= "large")
+            
+            if jogo.ponto_jogo_jogador_0 > jogo.ponto_jogo_jogador_1:
+                messege_to_screen_0("O jogador de baixo ganhou",branco, tela_largura//2, tela_altura//2, y_displace=-100, size= "medium")
+            else:
+                messege_to_screen_0("O jogador de cima ganhou",branco, tela_largura//2, tela_altura//2, y_displace=-100, size= "medium")
+            
+
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
                     
-                        if event.key == pygame.K_F5:
-                            tela_truco = pygame.display.set_mode((tela_largura, tela_altura),pygame.FULLSCREEN)
+                    
+                if event.type == pygame.KEYDOWN:
+                
+                    if event.key == pygame.K_F5:
+                        tela_truco = pygame.display.set_mode((tela_largura, tela_altura),pygame.FULLSCREEN)
+                    
+                    if event.key == pygame.K_ESCAPE:
+                        tela_truco = pygame.display.set_mode((tela_largura, tela_altura))
                         
-                        if event.key == pygame.K_ESCAPE:
-                            tela_truco = pygame.display.set_mode((tela_largura, tela_altura))
+            
+            if verifica_botao_recomecar(200, tela_altura//2 +200) == True:
+                fim_do_jogo = False
+                inicio_da_partida = True
+                tela_truco.fill(verde)
+                apertou_ESPAÇO = False
+                jogador_que_começa = 0    
+                jogo.ponto_jogo_jogador_0 = 0
+                jogo.ponto_jogo_jogador_1 = 0
+                
+            elif verifica_botao_sair(400, tela_altura//2 +200) == True:
+                pygame.quit()
+
+            pygame.display.update()
+                
+                
                             
         if inicio_da_partida == True:
+            
             jogo.reset()
+            pygame.display.update()
             
             jogo.jogador = jogador_que_começa
             jogou_carta_1_1 = False
